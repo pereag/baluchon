@@ -13,6 +13,14 @@
 		D860C6212722E14600D2119A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D860C6202722E14600D2119A /* Assets.xcassets */; };
 		D860C6242722E14600D2119A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D860C6222722E14600D2119A /* LaunchScreen.storyboard */; };
 		D860C62F2722E14700D2119A /* Le_baluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D860C62E2722E14700D2119A /* Le_baluchonTests.swift */; };
+		D8E8F968272BFB6900785FD2 /* ChangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8F967272BFB6900785FD2 /* ChangeRateViewController.swift */; };
+		D8E8F96A272BFB9200785FD2 /* ChangeRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8F969272BFB9200785FD2 /* ChangeRateViewModel.swift */; };
+		D8E8F96D272BFD7A00785FD2 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8F96C272BFD7A00785FD2 /* TranslateViewController.swift */; };
+		D8E8F96F272BFF2B00785FD2 /* TranslateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8F96E272BFF2B00785FD2 /* TranslateViewModel.swift */; };
+		D8E8F973272BFFCF00785FD2 /* MeteoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8F972272BFFCF00785FD2 /* MeteoViewController.swift */; };
+		D8E8F975272BFFFA00785FD2 /* MeteoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8F974272BFFFA00785FD2 /* MeteoViewModel.swift */; };
+		D8E8F977272C00A000785FD2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8F976272C00A000785FD2 /* Coordinator.swift */; };
+		D8E8F979272C00B600785FD2 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8F978272C00B600785FD2 /* Screens.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,14 @@
 		D860C6252722E14600D2119A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D860C62A2722E14700D2119A /* Le baluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le baluchonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D860C62E2722E14700D2119A /* Le_baluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Le_baluchonTests.swift; sourceTree = "<group>"; };
+		D8E8F967272BFB6900785FD2 /* ChangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateViewController.swift; sourceTree = "<group>"; };
+		D8E8F969272BFB9200785FD2 /* ChangeRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateViewModel.swift; sourceTree = "<group>"; };
+		D8E8F96C272BFD7A00785FD2 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		D8E8F96E272BFF2B00785FD2 /* TranslateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewModel.swift; sourceTree = "<group>"; };
+		D8E8F972272BFFCF00785FD2 /* MeteoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoViewController.swift; sourceTree = "<group>"; };
+		D8E8F974272BFFFA00785FD2 /* MeteoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoViewModel.swift; sourceTree = "<group>"; };
+		D8E8F976272C00A000785FD2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D8E8F978272C00B600785FD2 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +120,50 @@
 			isa = PBXGroup;
 			children = (
 				D860C6172722E14600D2119A /* AppDelegate.swift */,
+				D8E8F976272C00A000785FD2 /* Coordinator.swift */,
+				D8E8F978272C00B600785FD2 /* Screens.swift */,
+				D8E8F964272BF73700785FD2 /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D8E8F964272BF73700785FD2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D8E8F970272BFF8E00785FD2 /* Meteo */,
+				D8E8F96B272BFD3F00785FD2 /* Translate */,
+				D8E8F965272BFAA000785FD2 /*  Change Rate */,
 				D860C61B2722E14600D2119A /* ViewController.swift */,
 				D860C61D2722E14600D2119A /* Main.storyboard */,
 			);
-			path = Sources;
+			path = App;
+			sourceTree = "<group>";
+		};
+		D8E8F965272BFAA000785FD2 /*  Change Rate */ = {
+			isa = PBXGroup;
+			children = (
+				D8E8F967272BFB6900785FD2 /* ChangeRateViewController.swift */,
+				D8E8F969272BFB9200785FD2 /* ChangeRateViewModel.swift */,
+			);
+			path = " Change Rate";
+			sourceTree = "<group>";
+		};
+		D8E8F96B272BFD3F00785FD2 /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				D8E8F96C272BFD7A00785FD2 /* TranslateViewController.swift */,
+				D8E8F96E272BFF2B00785FD2 /* TranslateViewModel.swift */,
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
+		D8E8F970272BFF8E00785FD2 /* Meteo */ = {
+			isa = PBXGroup;
+			children = (
+				D8E8F972272BFFCF00785FD2 /* MeteoViewController.swift */,
+				D8E8F974272BFFFA00785FD2 /* MeteoViewModel.swift */,
+			);
+			path = Meteo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +267,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E8F96F272BFF2B00785FD2 /* TranslateViewModel.swift in Sources */,
+				D8E8F979272C00B600785FD2 /* Screens.swift in Sources */,
+				D8E8F973272BFFCF00785FD2 /* MeteoViewController.swift in Sources */,
+				D8E8F968272BFB6900785FD2 /* ChangeRateViewController.swift in Sources */,
+				D8E8F96D272BFD7A00785FD2 /* TranslateViewController.swift in Sources */,
 				D860C61C2722E14600D2119A /* ViewController.swift in Sources */,
+				D8E8F975272BFFFA00785FD2 /* MeteoViewModel.swift in Sources */,
+				D8E8F96A272BFB9200785FD2 /* ChangeRateViewModel.swift in Sources */,
 				D860C6182722E14600D2119A /* AppDelegate.swift in Sources */,
+				D8E8F977272C00A000785FD2 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
