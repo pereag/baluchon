@@ -7,10 +7,13 @@
 import UIKit
 
 final class Screens {
+    
     //MARK: - Properties
     
     let storyBoard = UIStoryboard(name:"Main", bundle: Bundle(for: Screens.self));
 }
+
+//MARK: - Changes rate
 
 extension Screens {
     func createsChangeRateViewController() -> UIViewController {
@@ -20,14 +23,18 @@ extension Screens {
     }
 }
 
+//MARK: - Translation
+
 extension Screens {
     func createsTranslateViewController() ->  UIViewController {
         return UIViewController()
     }
 }
 
+//MARK: - Weather Forecast
+
 extension Screens {
-    func createsMeteoViewController() ->  UIViewController {
+    func createsWeatherForecastViewController() ->  UIViewController {
         return UIViewController()
     }
 }

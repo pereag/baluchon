@@ -5,14 +5,13 @@
 //  Created by Valc0d3 on 31/10/2021.
 //
 
-import Foundation
 import UIKit
 
 final class FlowCoordinator {
     
     // MARK: - Properties
     
-    private let presenter:UIWindow
+    private let presenter: UIWindow
     private let screens: Screens
     
     
@@ -24,7 +23,7 @@ final class FlowCoordinator {
     }
     
     func start() {
-        let ChangeRateViewController = screens.createsChangeRateViewController()
-        presenter.rootViewController = ChangeRateViewController
+        let changeRateViewController = screens.createsChangeRateViewController()
+        presenter.rootViewController = changeRateViewController
     }
 }

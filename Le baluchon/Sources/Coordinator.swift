@@ -8,6 +8,7 @@
 import UIKit
 
 final class Coordinator {
+    
     // MARK: - Properties
     
     private unowned var appDelegate: AppDelegate
@@ -18,7 +19,9 @@ final class Coordinator {
     init(appDelegate: AppDelegate) {
         self.appDelegate = appDelegate
     }
+
     //MARK: - Start
+
     func start() {
         appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
         appDelegate.window!.rootViewController = UIViewController()
