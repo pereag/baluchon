@@ -12,16 +12,14 @@ struct WeatherEndpoint: Endpoint {
     var path: String
     var queryParameters: [String : Any]?
 
-    init(q: String, appid: String, lang: String,  units: String) {
+    init(cityName: String) {
         self.method = .GET
         self.path = "https://api.openweathermap.org/data/2.5/weather"
         self.queryParameters = [
-            "q": q,
-            "appid": appid,
-            "lang" : lang,
-            "units": units
-            
-            
+            "q": cityName,
+            "appid": ApiKeys.weather.rawValue,
+            "lang" : "fr",
+            "units": "metrics"
         ]
     }
 }

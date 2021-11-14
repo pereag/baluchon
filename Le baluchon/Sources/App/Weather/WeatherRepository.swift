@@ -8,7 +8,7 @@
 import Foundation
 
 protocol WeatherRepositoryType {
-    func getWeatherInfo(callBack: @escaping (Result<WeatherResponse, Error>) -> Void)
+    func getWeatherInfo(for city: String, callBack: @escaping (Result<WeatherResponse, Error>) -> Void)
 }
 
 final class WeatherRepository: WeatherRepositoryType {
@@ -29,13 +29,8 @@ final class WeatherRepository: WeatherRepositoryType {
     
     // MARK: - ChangeRateEndpoint
     
-    func getWeatherInfo(callBack: @escaping (Result<WeatherResponse, Error>) -> Void) {
-        let endpoint = WeatherEndpoint(
-            q: "lyon",
-            appid: "8e81245c4c9ba68876e7cfefbe293380",
-            lang: "fr",
-            units: "metric"
-        )
+    func getWeatherInfo(for city: String, callBack: @escaping (Result<WeatherResponse, Error>) -> Void) {
+        let endpoint = WeatherEndpoint(cityName: city)
         guard let request = RequestBuilder().build(from: endpoint) else { return }
         client.send(
             request: request,

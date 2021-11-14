@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TranslateRepositoryType {
-    func getTranslation(callBack: @escaping (Result<TranslateResponse, Error>) -> Void)
+    func getTranslation(for phrase: String, callBack: @escaping (Result<TranslateResponse, Error>) -> Void)
 }
 
 final class TranslateRepository: TranslateRepositoryType {
@@ -29,10 +29,10 @@ final class TranslateRepository: TranslateRepositoryType {
     
     // MARK: - TranslateEndpoint
     
-    func getTranslation(callBack: @escaping (Result<TranslateResponse, Error>) -> Void) {
+    func getTranslation(for phrase: String, callBack: @escaping (Result<TranslateResponse, Error>) -> Void) {
         let endpoint = TranslateEndpoint(
             ApiKey: "AIzaSyAVKYCo1DYul1Ye_44fJ663pnRcEoyeIIc",
-            q: "Je m'appel valentin et je suis un développeur web",
+            q: phrase,
             sourceLang: "fr",
             targetLang: "en",
             textFormat: "text"

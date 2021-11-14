@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ChangeRateRepositoryType {
-    func gateRate(callback: @escaping (Result<ChangeRateResponse, Error>) -> Void)
+    func gateRate(callBack: @escaping (Result<ChangeRateResponse, Error>) -> Void)
 }
 
 class ChangeRateRepository: ChangeRateRepositoryType {
@@ -29,7 +29,7 @@ class ChangeRateRepository: ChangeRateRepositoryType {
     
     // MARK: - ChangeRateEndpoint
     
-    func gateRate(callback: @escaping (Result<ChangeRateResponse, Error>) -> Void) {
+    func gateRate(callBack: @escaping (Result<ChangeRateResponse, Error>) -> Void) {
         let endpoint = ChangeRateEndpoint(
             accesKey: "71f2951733a72a5b29db871e9b12f2ac",
             moneyBase: "EUR",
@@ -42,7 +42,7 @@ class ChangeRateRepository: ChangeRateRepositoryType {
             completionHandler: { result in
                 switch result {
                 case .success(let data):
-                    guard let response: Result<TranslateResponse, ParserError> = try? self.parser.processCodableResponse(from: data) else { return }
+                    guard let response: Result<ChangeRateResponse, ParserError> = try? self.parser.processCodableResponse(from: data) else { return }
                     switch response {
                     case .success(let result):
                         callBack(.success(result))
