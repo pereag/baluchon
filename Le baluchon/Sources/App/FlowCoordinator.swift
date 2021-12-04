@@ -23,7 +23,7 @@ final class FlowCoordinator {
     }
     
     func start() {
-        let changeRateViewController = screens.createsChangeRateViewController()
-        presenter.rootViewController = changeRateViewController
+        let viewController = screens.createsChangeRateViewController()
+        presenter.rootViewController = viewController
     }
 }

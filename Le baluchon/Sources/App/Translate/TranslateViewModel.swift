@@ -10,50 +10,43 @@ import Foundation
 final class TranslateViewModel {
 
     // MARK: - Properties
-
-    let actions: Actions
-
+    
     private let repository: TranslateRepositoryType
     
-    private let phrase : String
-
-    private var phraseTranslated: String = "" {
-        didSet {
-            self.getPhraseTranslated?(phraseTranslated)
-        }
-    }
-
-    struct Actions {
-        var displayPhraseTranslated: (String) -> Void
-    }
-
     // MARK: - Initializer
 
-    init(actions: Actions, repository: TranslateRepositoryType, phrase: String) {
-        self.actions = actions
+    init(repository: TranslateRepositoryType) {
         self.repository = repository
-        self.phrase = phrase
     }
 
     // MARK: - Outputs
-    var getPhraseTranslated: ((String) -> Void)?
+    
+    let translateButtonTitle = "Traduire"
+    var translatedText: ((String) -> Void)?
 
     // MARK: - Inputs
 
     func viewDidLoad() {
-        repository.getTranslation(for: self.phrase) { [weak self] result in
+        translatedText?("")
+    }
+
+    func didPress(translate text: String) {
+        repository.getTranslation(for: text) { [weak self] result in
             switch result {
             case .success(let response):
-                self?.phraseTranslated = response.data.translations[0].translatedText
+                self?.handle(response)
             case .failure(let error):
-                self?.getPhraseTranslated?("")
+                self?.translatedText?("")
                 print(error)
             }
         }
     }
 
-    func returnAllInfo() {
-        let phraseTranslated = self.phraseTranslated
-        actions.displayPhraseTranslated(phraseTranslated)
+    private func handle(_ response: TranslateResponse) {
+        guard response.data.translations.indices.contains(0) else { return }
+        self.translatedText?(response.data.translations[0].translatedText)
+
+//        guard let translation = response.data.translations.first else { return }
+//        self.translatedText?(translation.translatedText)
     }
 }

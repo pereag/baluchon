@@ -17,9 +17,13 @@ final class Screens {
 
 extension Screens {
     func createsChangeRateViewController() -> UIViewController {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .blue
-        return vc
+        let client = HTTPClient()
+        let parser = JSONParser()
+        let repository = ChangeRateRepository(client: client, parser: parser)
+        let viewModel = ChangeRateViewModel(repository: repository)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "ChangeRateViewController") as! ChangeRateViewController
+        viewController.viewModel = viewModel
+        return viewController
     }
 }
 

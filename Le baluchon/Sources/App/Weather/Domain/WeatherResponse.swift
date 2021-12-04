@@ -22,6 +22,18 @@ struct WeatherResponse: Codable {
     let name: String
     let cod: Int
     
+    // MARK: - Weather
+    struct Weather: Codable {
+        let id: Int
+        let main, weatherDescription, icon: String
+
+        enum CodingKeys: String, CodingKey {
+            case id, main
+            case weatherDescription = "description"
+            case icon
+        }
+    }
+    
     // MARK: - Clouds
     struct Clouds: Codable {
         let all: Int
@@ -51,18 +63,6 @@ struct WeatherResponse: Codable {
         let type, id: Int
         let country: String
         let sunrise, sunset: Int
-    }
-
-    // MARK: - Weather
-    struct Weather: Codable {
-        let id: Int
-        let main, weatherDescription, icon: String
-
-        enum CodingKeys: String, CodingKey {
-            case id, main
-            case weatherDescription = "description"
-            case icon
-        }
     }
 
     // MARK: - Wind

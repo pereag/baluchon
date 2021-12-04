@@ -192,6 +192,7 @@
 				D860C6172722E14600D2119A /* AppDelegate.swift */,
 				D8E8F976272C00A000785FD2 /* Coordinator.swift */,
 				D8E8F978272C00B600785FD2 /* Screens.swift */,
+				D860C61D2722E14600D2119A /* Main.storyboard */,
 				D8E8F964272BF73700785FD2 /* App */,
 				D857E37D2732DBDD00D28716 /* Network */,
 			);
@@ -204,7 +205,6 @@
 				D8E8F970272BFF8E00785FD2 /* Weather */,
 				D8E8F96B272BFD3F00785FD2 /* Translate */,
 				D8E8F965272BFAA000785FD2 /*  Change Rate */,
-				D860C61D2722E14600D2119A /* Main.storyboard */,
 				D8E0CBCC272E9B8200242FD5 /* FlowCoordinator.swift */,
 			);
 			path = App;
