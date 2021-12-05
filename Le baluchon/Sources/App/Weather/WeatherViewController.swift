@@ -6,3 +6,21 @@
 //
 
 import UIKit
+
+final class WeatherViewController: UIViewController {
+    var viewModel: WeatherViewModel!
+    
+    // MARK: - Properties
+    
+    
+        
+    // MARK: - View life cycles
+    
+    // MARK: - ACTIONS
+    
+    
+
+}
+
+
+

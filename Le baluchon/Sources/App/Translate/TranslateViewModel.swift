@@ -18,6 +18,8 @@ final class TranslateViewModel {
     init(repository: TranslateRepositoryType) {
         self.repository = repository
     }
+    
+    
 
     // MARK: - Outputs
     

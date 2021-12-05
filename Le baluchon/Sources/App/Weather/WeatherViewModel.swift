@@ -53,7 +53,7 @@ final class WeatherViewModel {
     
     // MARK: - Initializer
 
-    init(a repository: WeatherRepositoryType, cityTargeted: String) {
+    init(repository: WeatherRepositoryType, cityTargeted: String) {
         self.repository = repository
         self.cityTargeted = cityTargeted
     }
@@ -78,7 +78,7 @@ final class WeatherViewModel {
                 self?.tempMin = response.main.tempMin
                 self?.tempMax = response.main.tempMin
                 self?.humidity = response.main.humidity
-                //self?.description = response.weather.weatherDescription
+                self?.description = ("\(response.weather[2])")
             case .failure(let error):
                 self?.name = ""
                 self?.temp = 0

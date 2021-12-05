@@ -30,15 +30,27 @@ extension Screens {
 //MARK: - Translation
 
 extension Screens {
-    func createsTranslateViewController() ->  UIViewController {
-        return UIViewController()
+    func createsTranslateViewController() -> UIViewController {
+        let client = HTTPClient()
+        let parser = JSONParser()
+        let repository = TranslateRepository(client: client, parser: parser)
+        let viewModel = TranslateViewModel(repository: repository)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "TranslateViewController") as! TranslateViewController
+        viewController.viewModel = viewModel
+        return viewController
     }
 }
 
 //MARK: - Weather Forecast
 
 extension Screens {
-    func createsWeatherForecastViewController() ->  UIViewController {
-        return UIViewController()
+    func WeatherViewController() -> UIViewController {
+        let client = HTTPClient()
+        let parser = JSONParser()
+        let repository = WeatherRepository(client: client, parser: parser)
+        let viewModel = WeatherViewModel(repository: repository, cityTargeted: "Lyon")
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
+        viewController.viewModel = viewModel
+        return viewController
     }
 }

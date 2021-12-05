@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Change Rate View Controller-->
+        <!--Translate View Controller-->
         <scene sceneID="Vka-y9-0bF">
             <objects>
-                <viewController storyboardIdentifier="ChangeRateViewController" id="TVf-dF-17Z" customClass="ChangeRateViewController" customModule="Le_baluchon" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TranslateViewController" id="TVf-dF-17Z" customClass="TranslateViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a2h-O8-MI8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="-808.79999999999995" y="-38.23088455772114"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Rate View Controller-->
         <scene sceneID="bxn-OI-8Pk">
             <objects>
-                <viewController id="ak5-5H-p5d" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeRateViewController" id="ak5-5H-p5d" customClass="ChangeRateViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pFw-Fa-ZAA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,6 +133,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Convertir"/>
+                                <connections>
+                                    <action selector="didPressConverterButton:" destination="ak5-5H-p5d" eventType="touchUpInside" id="XgT-Jq-z3G"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piF-Sb-9C6">
                                 <rect key="frame" x="20" y="132" width="378" height="20"/>
@@ -163,15 +166,22 @@
                             <constraint firstItem="zmV-WC-fO2" firstAttribute="trailing" secondItem="piF-Sb-9C6" secondAttribute="trailing" constant="16" id="uVZ-Ki-D0s"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fieldDollar" destination="Gh9-2p-pRA" id="6oW-UD-DXM"/>
+                        <outlet property="fieldEuros" destination="6Fy-na-O4U" id="Jcv-Ai-yVq"/>
+                        <outlet property="textDollar" destination="4Qz-ps-pmX" id="uev-MI-QOp"/>
+                        <outlet property="textEuros" destination="piF-Sb-9C6" id="H2o-Fq-ag3"/>
+                        <outlet property="textTitle" destination="ymq-Wg-fKJ" id="imO-xL-R37"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzg-Fh-4P0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="-39"/>
         </scene>
-        <!--View Controller-->
+        <!--Weather View Controller-->
         <scene sceneID="nmb-SW-Dqc">
             <objects>
-                <viewController id="D0x-Mr-ZkH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeatherViewController" id="D0x-Mr-ZkH" customClass="WeatherViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F2n-bM-PAU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
