@@ -12,24 +12,25 @@ final class ChangeRateViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var textTitle: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var textEuros: UILabel!
+    @IBOutlet weak var eurosLabel: UILabel!
     
-    @IBOutlet weak var textDollar: UILabel!
+    @IBOutlet weak var eurosField: UITextField!
     
-    @IBOutlet weak var fieldEuros: UITextField!
+    @IBOutlet weak var dollarLabel: UILabel!
     
-    @IBOutlet weak var fieldDollar: UITextField!
+    @IBOutlet weak var dollarField: UITextField!
+    
+    @IBOutlet weak var converterButton: UIButton!
     
     // MARK: - View life cycles
     override func viewDidLoad() {
-        fieldDollar.isUserInteractionEnabled = false
+        dollarField.isUserInteractionEnabled = false
     }
     
     // MARK: - ACTIONS
     
     @IBAction func didPressConverterButton(_ sender: UIButton) {
-      
     }
 }

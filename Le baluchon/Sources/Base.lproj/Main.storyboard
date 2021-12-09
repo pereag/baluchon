@@ -63,6 +63,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Traduire"/>
+                                <connections>
+                                    <action selector="didPressTranslateButton:" destination="TVf-dF-17Z" eventType="touchUpInside" id="Poe-qc-gwW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j5b-ug-7vL"/>
@@ -87,6 +90,14 @@
                             <constraint firstItem="IQs-Cc-sfx" firstAttribute="leading" secondItem="j5b-ug-7vL" secondAttribute="leading" constant="18" id="yGs-BX-woa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="englishField" destination="mK3-Fp-OWd" id="V4o-tL-Idx"/>
+                        <outlet property="englishLabel" destination="WE7-Yo-GyE" id="jzT-zM-WZj"/>
+                        <outlet property="frenchField" destination="gJk-cI-oEx" id="nC0-29-W77"/>
+                        <outlet property="frenchLabel" destination="IQs-Cc-sfx" id="nK1-Vk-iJN"/>
+                        <outlet property="titleLabel" destination="fWM-bh-yg0" id="XRP-vD-g6U"/>
+                        <outlet property="translateButton" destination="3dF-q0-QUx" id="oPh-mw-76b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63z-Jn-xyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,7 +145,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Convertir"/>
                                 <connections>
-                                    <action selector="didPressConverterButton:" destination="ak5-5H-p5d" eventType="touchUpInside" id="XgT-Jq-z3G"/>
+                                    <action selector="didPressConverterButton:" destination="ak5-5H-p5d" eventType="touchUpInside" id="FtI-HS-Rsb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piF-Sb-9C6">
@@ -167,11 +178,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fieldDollar" destination="Gh9-2p-pRA" id="6oW-UD-DXM"/>
-                        <outlet property="fieldEuros" destination="6Fy-na-O4U" id="Jcv-Ai-yVq"/>
-                        <outlet property="textDollar" destination="4Qz-ps-pmX" id="uev-MI-QOp"/>
-                        <outlet property="textEuros" destination="piF-Sb-9C6" id="H2o-Fq-ag3"/>
-                        <outlet property="textTitle" destination="ymq-Wg-fKJ" id="imO-xL-R37"/>
+                        <outlet property="converterButton" destination="qJx-FK-7IZ" id="MDt-gJ-hko"/>
+                        <outlet property="dollarField" destination="Gh9-2p-pRA" id="Hpa-nF-VgA"/>
+                        <outlet property="dollarLabel" destination="4Qz-ps-pmX" id="XT9-TF-zyj"/>
+                        <outlet property="eurosField" destination="6Fy-na-O4U" id="aH9-LE-ihz"/>
+                        <outlet property="eurosLabel" destination="piF-Sb-9C6" id="jZY-CR-JGu"/>
+                        <outlet property="titleLabel" destination="ymq-Wg-fKJ" id="rRB-NT-fZ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzg-Fh-4P0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -306,6 +318,21 @@
                             <constraint firstItem="1TJ-ZJ-cGs" firstAttribute="top" secondItem="SaO-Kz-DCJ" secondAttribute="bottom" constant="14" id="wuK-Iz-cXh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="city1Label" destination="mc9-Up-7DE" id="wk1-KX-Fvm"/>
+                        <outlet property="city2Label" destination="nrk-NH-hiz" id="ctH-pr-na0"/>
+                        <outlet property="description2Label" destination="1de-FR-7et" id="ZAM-bF-oV5"/>
+                        <outlet property="descrition1Label" destination="apv-VJ-bca" id="YPZ-GK-xzw"/>
+                        <outlet property="humidity1Label" destination="0LG-m8-THZ" id="AaK-fY-r8L"/>
+                        <outlet property="humidity2Label" destination="gin-a6-qp0" id="BEu-ud-7Cg"/>
+                        <outlet property="temp1Label" destination="2Qv-ZY-8eo" id="E7Q-RG-qRc"/>
+                        <outlet property="temp2Label" destination="ueW-Np-V1U" id="xka-0K-QVN"/>
+                        <outlet property="tempMax1Label" destination="vVt-lM-ith" id="v4u-NW-693"/>
+                        <outlet property="tempMax2Label" destination="1TJ-ZJ-cGs" id="5AK-fL-3EH"/>
+                        <outlet property="tempMin1Label" destination="T2R-r2-5wO" id="u8C-fQ-rWY"/>
+                        <outlet property="tempMin2Label" destination="SaO-Kz-DCJ" id="CIG-RR-8Hl"/>
+                        <outlet property="titleLabel" destination="bJs-h9-Xui" id="zfu-4a-2qg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kf-on-BR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
