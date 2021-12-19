@@ -18,8 +18,6 @@ final class TranslateViewModel {
     init(repository: TranslateRepositoryType) {
         self.repository = repository
     }
-    
-    
 
     // MARK: - Outputs
     
@@ -38,7 +36,7 @@ final class TranslateViewModel {
             case .success(let response):
                 self?.handle(response)
             case .failure(let error):
-                self?.translatedText?("")
+                self?.translatedText?("Erreur: Une erreur de communication avec l'API est survenue")
                 print(error)
             }
         }

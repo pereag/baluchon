@@ -8,29 +8,38 @@
 import UIKit
 
 final class TranslateViewController: UIViewController {
-    var viewModel: TranslateViewModel!
+    
     // MARK: - Properties
     
-    @IBOutlet weak var titleLabel: UILabel!
+    var viewModel: TranslateViewModel!
     
+    // MARK: - Outlets
+    
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet weak var frenchLabel: UILabel!
-    
     @IBOutlet weak var frenchField: UITextView!
-    
     @IBOutlet weak var englishLabel: UILabel!
-    
     @IBOutlet weak var englishField: UITextView!
-    
     @IBOutlet weak var translateButton: UIButton!
     
     // MARK: - View life cycles
-    
-    // MARK: - ACTIONS
-    
-    
-    @IBAction func didPressTranslateButton(_ sender: UIButton) {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bind()
+        viewModel.viewDidLoad()
+    }
+
+    private func bind() {
+        viewModel.translatedText = { [weak self] text in
+            self?.englishField.text = text
+        }
     }
     
+    // MARK: - Actions
     
-
+    @IBAction private func didPressTranslateButton(_ sender: UIButton) {
+        guard let text = frenchField.text else { return }
+        viewModel.didPress(translate: text)
+    }
 }

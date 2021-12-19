@@ -48,7 +48,7 @@ extension Screens {
         let client = HTTPClient()
         let parser = JSONParser()
         let repository = WeatherRepository(client: client, parser: parser)
-        let viewModel = WeatherViewModel(repository: repository, cityTargeted: "Lyon")
+        let viewModel = WeatherViewModel(repository: repository)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
         viewController.viewModel = viewModel
         return viewController

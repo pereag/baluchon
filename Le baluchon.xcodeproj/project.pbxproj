@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D81A3630276F6C1E00CFCE2A /* TranslateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A362F276F6C1E00CFCE2A /* TranslateTests.swift */; };
+		D81A3632276F70A900CFCE2A /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A3631276F70A900CFCE2A /* WeatherTests.swift */; };
+		D81A3636276F712900CFCE2A /* ChangeRatesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A3635276F712900CFCE2A /* ChangeRatesTest.swift */; };
 		D8425B99273ADBC100C68638 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8425B98273ADBC100C68638 /* ApiKeys.swift */; };
 		D857E3822732DBDD00D28716 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857E37E2732DBDD00D28716 /* RequestBuilder.swift */; };
 		D857E3832732DBDD00D28716 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857E37F2732DBDD00D28716 /* HTTPClient.swift */; };
@@ -49,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D81A362F276F6C1E00CFCE2A /* TranslateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTests.swift; sourceTree = "<group>"; };
+		D81A3631276F70A900CFCE2A /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
+		D81A3635276F712900CFCE2A /* ChangeRatesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRatesTest.swift; sourceTree = "<group>"; };
 		D8425B98273ADBC100C68638 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		D857E37E2732DBDD00D28716 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		D857E37F2732DBDD00D28716 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -171,6 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				D860C62E2722E14700D2119A /* Le_baluchonTests.swift */,
+				D81A362F276F6C1E00CFCE2A /* TranslateTests.swift */,
+				D81A3631276F70A900CFCE2A /* WeatherTests.swift */,
+				D81A3635276F712900CFCE2A /* ChangeRatesTest.swift */,
 			);
 			path = "Le baluchonTests";
 			sourceTree = "<group>";
@@ -376,7 +385,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81A3630276F6C1E00CFCE2A /* TranslateTests.swift in Sources */,
+				D81A3636276F712900CFCE2A /* ChangeRatesTest.swift in Sources */,
 				D860C62F2722E14700D2119A /* Le_baluchonTests.swift in Sources */,
+				D81A3632276F70A900CFCE2A /* WeatherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

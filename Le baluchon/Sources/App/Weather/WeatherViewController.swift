@@ -40,11 +40,55 @@ final class WeatherViewController: UIViewController {
     
     // MARK: - View life cycles
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.viewDidLoad()
+        self.bind()
+        self.titleLabel.text! = viewModel.primaryTitleText
+    }
+    
+    private func bind() {
+        viewModel.nameText1 = { [weak self] text in
+            self?.city1Label.text = text
+        }
+        viewModel.tempText1 = { [weak self] text in
+            self?.temp1Label.text = text
+        }
+        viewModel.tempMinText1 = { [weak self] text in
+            self?.tempMin1Label.text = text
+        }
+        viewModel.tempMaxText1 = { [weak self] text in
+            self?.tempMax1Label.text = text
+        }
+        viewModel.humidityText1 = { [weak self] text in
+            self?.humidity1Label.text = text
+        }
+        viewModel.descriptionText1 = { [weak self] text in
+            self?.descrition1Label.text = text
+        }
+        
+        viewModel.nameText2 = { [weak self] text in
+            self?.city2Label.text = text
+        }
+        viewModel.tempText2 = { [weak self] text in
+            self?.temp2Label.text = text
+        }
+        viewModel.tempMinText1 = { [weak self] text in
+            self?.tempMin1Label.text = text
+        }
+        viewModel.tempMaxText2 = { [weak self] text in
+            self?.tempMax2Label.text = text
+        }
+        viewModel.humidityText2 = { [weak self] text in
+            self?.humidity2Label.text = text
+        }
+        viewModel.descriptionText2 = { [weak self] text in
+            self?.description2Label.text = text
+        }
+    }
+    
     // MARK: - ACTIONS
     
-    
-    
-
 }
 
 

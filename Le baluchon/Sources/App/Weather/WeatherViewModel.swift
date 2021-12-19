@@ -13,81 +13,81 @@ final class WeatherViewModel {
 
     private let repository: WeatherRepositoryType
     
-    private let cityTargeted : String
+    struct Constants {
+        static let cityOne = "Lyon"
+        static let cityTwo = "New York"
+    }
 
-    private var name: String = "" {
-        didSet {
-            self.nameText?(name)
-        }
-    }
-    
-    private var temp: Double = 0 {
-        didSet {
-            self.tempText?("\(temp)")
-        }
-    }
-    
-    private var tempMin: Double = 0 {
-        didSet {
-            self.tempMinText?("\(tempMin)")
-        }
-    }
-    
-    private var tempMax: Double = 0 {
-        didSet {
-            self.tempMaxText?("\(tempMax)")
-        }
-    }
-    
-    private var humidity: Int = 0 {
-        didSet {
-            self.humidityText?("\(humidity)")
-        }
-    }
-    
-    private var description: String = "" {
-        didSet {
-            self.descriptionText?(description)
-        }
-    }
-    
     // MARK: - Initializer
 
-    init(repository: WeatherRepositoryType, cityTargeted: String) {
+    init(repository: WeatherRepositoryType) {
         self.repository = repository
-        self.cityTargeted = cityTargeted
     }
 
     // MARK: - Outputs
 
-    var nameText: ((String) -> Void)?
-    var tempText: ((String) -> Void)?
-    var tempMinText: ((String) -> Void)?
-    var tempMaxText: ((String) -> Void)?
-    var humidityText: ((String) -> Void)?
-    var descriptionText: ((String) -> Void)?
+    var primaryTitleText = "Météo"
+    var nameText1: ((String) -> Void)?
+    var tempText1: ((String) -> Void)?
+    var tempMinText1: ((String) -> Void)?
+    var tempMaxText1: ((String) -> Void)?
+    var humidityText1: ((String) -> Void)?
+    var descriptionText1: ((String) -> Void)?
+    
+    var nameText2: ((String) -> Void)?
+    var tempText2: ((String) -> Void)?
+    var tempMinText2: ((String) -> Void)?
+    var tempMaxText2: ((String) -> Void)?
+    var humidityText2: ((String) -> Void)?
+    var descriptionText2: ((String) -> Void)?
+    
 
     // MARK: - Inputs
 
     func viewDidLoad() {
-        repository.getWeatherInfo(for: self.cityTargeted) { [weak self] result in
+        nameText1?("")
+        tempText1?("")
+        tempMinText1?("")
+        tempMaxText1?("")
+        humidityText1?("")
+        descriptionText1?("")
+        
+        nameText2?("")
+        tempText2?("")
+        tempMinText2?("")
+        tempMaxText2?("")
+        humidityText2?("")
+        descriptionText2?("")
+        self.getData() // Voir avec Bertrand 
+    }
+
+    private func getData() {
+        repository.getWeatherInfo(for: Constants.cityOne) { [weak self] result in
             switch result {
             case .success(let response):
-                self?.name = response.name
-                self?.temp = response.main.temp
-                self?.tempMin = response.main.tempMin
-                self?.tempMax = response.main.tempMin
-                self?.humidity = response.main.humidity
-                self?.description = ("\(response.weather[2])")
+                self?.nameText1?(response.name)
+                self?.tempText1?("\(response.main.temp)")
+                self?.tempMinText1?("\(response.main.tempMin)")
+                self?.tempMaxText1?("\(response.main.tempMin)")
+                self?.humidityText1?("\(response.main.humidity)")
+                self?.descriptionText1?("\(response.weather[2])")
             case .failure(let error):
-                self?.name = ""
-                self?.temp = 0
-                self?.tempMin = 0
-                self?.tempMax = 0
-                self?.humidity = 0
-                self?.description = ""
+                print(error)
+            }
+        }
+        repository.getWeatherInfo(for: Constants.cityTwo) { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.nameText2?(response.name)
+                self?.tempText2?("\(response.main.temp)")
+                self?.tempMinText2?("\(response.main.tempMin)")
+                self?.tempMaxText2?("\(response.main.tempMin)")
+                self?.humidityText2?("\(response.main.humidity)")
+                self?.descriptionText2?("\(response.weather[2])")
+            case .failure(let error):
                 print(error)
             }
         }
     }
 }
+

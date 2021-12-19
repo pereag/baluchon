@@ -27,10 +27,20 @@ final class ChangeRateViewController: UIViewController {
     // MARK: - View life cycles
     override func viewDidLoad() {
         dollarField.isUserInteractionEnabled = false
+        super.viewDidLoad()
+        bind()
+        viewModel.viewDidLoad()
+    }
+    
+    private func bind() {
+        viewModel.displayedResult = {[weak self] text in
+            self?.dollarField.text = text
+        }
     }
     
     // MARK: - ACTIONS
     
     @IBAction func didPressConverterButton(_ sender: UIButton) {
+        viewModel.didPressChangeRate(for: eurosField.text!)
     }
 }
