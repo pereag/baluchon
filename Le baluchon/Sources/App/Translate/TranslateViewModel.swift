@@ -45,8 +45,5 @@ final class TranslateViewModel {
     private func handle(_ response: TranslateResponse) {
         guard response.data.translations.indices.contains(0) else { return }
         self.translatedText?(response.data.translations[0].translatedText)
-
-//        guard let translation = response.data.translations.first else { return }
-//        self.translatedText?(translation.translatedText)
     }
 }

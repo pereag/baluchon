@@ -13,7 +13,7 @@ final class WeatherViewModel {
 
     private let repository: WeatherRepositoryType
     
-    struct Constants {
+    private struct Constants {
         static let cityOne = "Lyon"
         static let cityTwo = "New York"
     }
@@ -40,11 +40,15 @@ final class WeatherViewModel {
     var tempMaxText2: ((String) -> Void)?
     var humidityText2: ((String) -> Void)?
     var descriptionText2: ((String) -> Void)?
-    
 
     // MARK: - Inputs
 
     func viewDidLoad() {
+        initData()
+        getData()
+    }
+
+    private func initData() {
         nameText1?("")
         tempText1?("")
         tempMinText1?("")
@@ -58,7 +62,6 @@ final class WeatherViewModel {
         tempMaxText2?("")
         humidityText2?("")
         descriptionText2?("")
-        self.getData() // Voir avec Bertrand 
     }
 
     private func getData() {
@@ -70,7 +73,11 @@ final class WeatherViewModel {
                 self?.tempMinText1?("\(response.main.tempMin)")
                 self?.tempMaxText1?("\(response.main.tempMin)")
                 self?.humidityText1?("\(response.main.humidity)")
-                self?.descriptionText1?("\(response.weather[2])")
+                if response.weather.indices.contains(2) {
+                    self?.descriptionText1?("\(response.weather[2])")
+                } else {
+                    self?.descriptionText1?("Aucune description disponible.")
+                }
             case .failure(let error):
                 print(error)
             }
@@ -83,11 +90,14 @@ final class WeatherViewModel {
                 self?.tempMinText2?("\(response.main.tempMin)")
                 self?.tempMaxText2?("\(response.main.tempMin)")
                 self?.humidityText2?("\(response.main.humidity)")
-                self?.descriptionText2?("\(response.weather[2])")
+                if response.weather.indices.contains(2) {
+                    self?.descriptionText2?("\(response.weather[2])")
+                } else {
+                    self?.descriptionText2?("Aucune description disponible.")
+                }
             case .failure(let error):
                 print(error)
             }
         }
     }
 }
-

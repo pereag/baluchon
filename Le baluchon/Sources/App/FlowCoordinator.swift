@@ -13,17 +13,23 @@ final class FlowCoordinator {
     
     private let presenter: UIWindow
     private let screens: Screens
-    
+    private let tabBarController: UITabBarController
     
     // MARK: - Start
     
     init(presenter: UIWindow) {
         self.presenter = presenter
         self.screens = Screens()
+        tabBarController = UITabBarController()
     }
     
     func start() {
-        let viewController = screens.createsChangeRateViewController()
-        presenter.rootViewController = viewController
+        let viewControllers: [UIViewController] = [
+            screens.createsChangeRateViewController(),
+            screens.createsTranslateViewController(),
+            screens.WeatherViewController()
+        ]
+        tabBarController.viewControllers = viewControllers
+        presenter.rootViewController = tabBarController
     }
 }

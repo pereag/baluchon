@@ -8,12 +8,14 @@
 import UIKit
 
 final class ChangeRateViewController: UIViewController {
-    var viewModel: ChangeRateViewModel!
     
     // MARK: - Properties
     
-    @IBOutlet weak var titleLabel: UILabel!
+    var viewModel: ChangeRateViewModel!
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var eurosLabel: UILabel!
     
     @IBOutlet weak var eurosField: UITextField!
@@ -25,16 +27,23 @@ final class ChangeRateViewController: UIViewController {
     @IBOutlet weak var converterButton: UIButton!
     
     // MARK: - View life cycles
+    
     override func viewDidLoad() {
-        dollarField.isUserInteractionEnabled = false
         super.viewDidLoad()
+        setupUI()
         bind()
         viewModel.viewDidLoad()
     }
+
+    private func setupUI() {
+        dollarField.isUserInteractionEnabled = false
+    }
     
     private func bind() {
-        viewModel.displayedResult = {[weak self] text in
-            self?.dollarField.text = text
+        viewModel.displayedResult = { [weak self] text in
+            DispatchQueue.main.async {
+                self?.dollarField.text = text
+            }
         }
     }
     

@@ -20,6 +20,7 @@ final class ChangeRateViewModel {
     }
 
     // MARK: - Outputs
+
     var displayedResult: ((String) -> Void)?
 
     // MARK: - Inputs

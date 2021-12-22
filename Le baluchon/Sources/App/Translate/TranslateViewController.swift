@@ -26,13 +26,15 @@ final class TranslateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind()
         viewModel.viewDidLoad()
+        bind()
     }
 
     private func bind() {
         viewModel.translatedText = { [weak self] text in
-            self?.englishField.text = text
+            DispatchQueue.main.async {
+                self?.englishField.text = text
+            }
         }
     }
     

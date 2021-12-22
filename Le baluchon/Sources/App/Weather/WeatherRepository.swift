@@ -19,7 +19,6 @@ final class WeatherRepository: WeatherRepositoryType {
     private let parser: JSONParserType
     private let token = RequestCancellationToken()
     
-    
     // MARK: - Init
     
     init(client: HTTPClientType, parser: JSONParserType) {

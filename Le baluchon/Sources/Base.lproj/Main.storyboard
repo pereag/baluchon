@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TVf-dF-17Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Translate View Controller-->
+        <!--Item-->
         <scene sceneID="Vka-y9-0bF">
             <objects>
                 <viewController storyboardIdentifier="TranslateViewController" id="TVf-dF-17Z" customClass="TranslateViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,6 +90,7 @@
                             <constraint firstItem="IQs-Cc-sfx" firstAttribute="leading" secondItem="j5b-ug-7vL" secondAttribute="leading" constant="18" id="yGs-BX-woa"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="r7H-Qv-7wj"/>
                     <connections>
                         <outlet property="englishField" destination="mK3-Fp-OWd" id="V4o-tL-Idx"/>
                         <outlet property="englishLabel" destination="WE7-Yo-GyE" id="jzT-zM-WZj"/>
@@ -101,9 +102,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63z-Jn-xyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-808.79999999999995" y="-38.23088455772114"/>
+            <point key="canvasLocation" x="-2091" y="762"/>
         </scene>
-        <!--Change Rate View Controller-->
+        <!--Item-->
         <scene sceneID="bxn-OI-8Pk">
             <objects>
                 <viewController storyboardIdentifier="ChangeRateViewController" id="ak5-5H-p5d" customClass="ChangeRateViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,6 +178,7 @@
                             <constraint firstItem="zmV-WC-fO2" firstAttribute="trailing" secondItem="piF-Sb-9C6" secondAttribute="trailing" constant="16" id="uVZ-Ki-D0s"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="L1i-mo-00t"/>
                     <connections>
                         <outlet property="converterButton" destination="qJx-FK-7IZ" id="MDt-gJ-hko"/>
                         <outlet property="dollarField" destination="Gh9-2p-pRA" id="Hpa-nF-VgA"/>
@@ -188,9 +190,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzg-Fh-4P0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="-39"/>
+            <point key="canvasLocation" x="-865" y="761"/>
         </scene>
-        <!--Weather View Controller-->
+        <!--Item-->
         <scene sceneID="nmb-SW-Dqc">
             <objects>
                 <viewController storyboardIdentifier="WeatherViewController" id="D0x-Mr-ZkH" customClass="WeatherViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
@@ -318,6 +320,7 @@
                             <constraint firstItem="1TJ-ZJ-cGs" firstAttribute="top" secondItem="SaO-Kz-DCJ" secondAttribute="bottom" constant="14" id="wuK-Iz-cXh"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Qg1-ru-eJC"/>
                     <connections>
                         <outlet property="city1Label" destination="mc9-Up-7DE" id="wk1-KX-Fvm"/>
                         <outlet property="city2Label" destination="nrk-NH-hiz" id="ctH-pr-na0"/>
@@ -336,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kf-on-BR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011.5942028985507" y="-40.178571428571423"/>
+            <point key="canvasLocation" x="300" y="761"/>
         </scene>
     </scenes>
     <resources>
