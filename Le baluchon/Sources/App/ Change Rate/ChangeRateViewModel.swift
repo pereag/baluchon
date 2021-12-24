@@ -36,7 +36,7 @@ final class ChangeRateViewModel {
             case .success(let response):
                 self?.handle(response, with: doubleValue)
             case .failure(let error):
-                self?.displayedResult?("Error")
+                self?.displayedResult?("Erreur: Une erreur est survenue")
                 print(error)
             }
         }

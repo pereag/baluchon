@@ -34,7 +34,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I'm French développer." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-cI-oEx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Je suis un développeur Français." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-cI-oEx">
                                 <rect key="frame" x="18" y="168" width="378" height="159.5"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
@@ -44,7 +44,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Je suis un développeur Français." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mK3-Fp-OWd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I'm french developer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mK3-Fp-OWd">
                                 <rect key="frame" x="18" y="381.5" width="378" height="159.5"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
