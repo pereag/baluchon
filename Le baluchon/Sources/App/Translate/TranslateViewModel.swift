@@ -8,28 +8,28 @@
 import Foundation
 
 final class TranslateViewModel {
-
+    
     // MARK: - Properties
     
     private let repository: TranslateRepositoryType
     
     // MARK: - Initializer
-
+    
     init(repository: TranslateRepositoryType) {
         self.repository = repository
     }
-
+    
     // MARK: - Outputs
     
     let translateButtonTitle = "Traduire"
     var translatedText: ((String) -> Void)?
-
+    
     // MARK: - Inputs
-
+    
     func viewDidLoad() {
         translatedText?("")
     }
-
+    
     func didPress(translate text: String) {
         repository.getTranslation(for: text) { [weak self] result in
             switch result {
@@ -41,7 +41,7 @@ final class TranslateViewModel {
             }
         }
     }
-
+    
     private func handle(_ response: TranslateResponse) {
         guard response.data.translations.indices.contains(0) else { return }
         self.translatedText?(response.data.translations[0].translatedText)

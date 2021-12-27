@@ -23,13 +23,13 @@ final class TranslateViewController: UIViewController {
     @IBOutlet weak var translateButton: UIButton!
     
     // MARK: - View life cycles
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         bind()
     }
-
+    
     private func bind() {
         viewModel.translatedText = { [weak self] text in
             DispatchQueue.main.async {

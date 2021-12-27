@@ -9,7 +9,7 @@ import XCTest
 @testable import Le_baluchon
 
 final class WeatherViewModelTests: XCTestCase {
-
+    
     func testWhenViewDidLoadThenOutputsAreCorrectlyReturned() {
         let nameText1Expectation = self.expectation(description: "Returned name text 1")
         let tempText1Expectation = self.expectation(description: "Returned temp text 1")
@@ -38,7 +38,7 @@ final class WeatherViewModelTests: XCTestCase {
         
         let mock = MockWeatherRepository(responses: .success)
         let viewModel = WeatherViewModel(repository: mock)
-
+        
         var counter = 0
         viewModel.nameText1 = { text in
             if counter == 1 {
@@ -47,23 +47,23 @@ final class WeatherViewModelTests: XCTestCase {
             }
             counter+=1
         }
-
+        
         viewModel.tempText1 = { _ in
             tempText1Expectation.fulfill()
         }
-
+        
         viewModel.tempMinText1 = { _ in
             tempMinText1Expectation.fulfill()
         }
-
+        
         viewModel.tempMaxText1 = { _ in
             tempMaxText1Expectation.fulfill()
         }
-
+        
         viewModel.humidityText1 = { _ in
             humidityText1Expectation.fulfill()
         }
-
+        
         viewModel.descriptionText1 = { _ in
             descriptionText1Expectation.fulfill()
         }
@@ -75,42 +75,42 @@ final class WeatherViewModelTests: XCTestCase {
         viewModel.tempText2 = { _ in
             tempText2Expectation.fulfill()
         }
-
+        
         viewModel.tempMinText2 = { _ in
             tempMinText2Expectation.fulfill()
         }
-
+        
         viewModel.tempMaxText2 = { _ in
             tempMaxText2Expectation.fulfill()
         }
-
+        
         viewModel.humidityText2 = { _ in
             humidityText2Expectation.fulfill()
         }
-
+        
         viewModel.descriptionText2 = { _ in
             descriptionText2Expectation.fulfill()
         }
-
+        
         viewModel.viewDidLoad()
-    
+        
         waitForExpectations(timeout: 1.0, handler: nil)
     }
     
 }
 
 private struct MockWeatherRepository: WeatherRepositoryType {
-
+    
     let responses: Responses
-
+    
     init(responses: Responses) {
         self.responses = responses
     }
-
+    
     struct Responses {
         var ongetWeather: Result<WeatherResponse, Error>
     }
-
+    
     func getWeatherInfo(for city: String, callBack: @escaping (Result<WeatherResponse, Error>) -> Void) {
         callBack(responses.ongetWeather)
     }

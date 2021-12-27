@@ -8,23 +8,23 @@
 import Foundation
 
 final class ChangeRateViewModel {
-
+    
     // MARK: - Properties
-
+    
     private let repository: ChangeRateRepositoryType
-
+    
     // MARK: - Initializer
-
+    
     init(repository: ChangeRateRepositoryType) {
         self.repository = repository
     }
-
+    
     // MARK: - Outputs
-
+    
     var displayedResult: ((String) -> Void)?
-
+    
     // MARK: - Inputs
-
+    
     func viewDidLoad() {
         displayedResult?("")
     }
@@ -41,7 +41,7 @@ final class ChangeRateViewModel {
             }
         }
     }
-
+    
     private func handle(_ response: ChangeRateResponse, with value: Double) {
         let usd = response.rates.usd
         let result = usd * value

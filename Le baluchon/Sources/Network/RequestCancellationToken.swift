@@ -8,13 +8,13 @@
 import Foundation
 
 final class RequestCancellationToken {
-
+    
     init() {}
-
+    
     deinit {
         willDeallocate?()
     }
-
+    
     var willDeallocate: (() -> Void)?
 }
 

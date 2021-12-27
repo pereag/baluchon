@@ -9,7 +9,7 @@ import XCTest
 @testable import Le_baluchon
 
 final class ChangeRateViewModelTest: XCTestCase {
-
+    
     func testWhenDidpressChangeRateWithSuccessThenOutputsAreCorrectlyReturned() {
         let displayedResultExpectation = self.expectation(description: "Returned result text")
         
@@ -56,7 +56,7 @@ final class ChangeRateViewModelTest: XCTestCase {
 
 private struct MockChangeRateRepository: ChangeRateRepositoryType {
     let responses: Responses
-
+    
     init(responses: Responses) {
         self.responses = responses
     }

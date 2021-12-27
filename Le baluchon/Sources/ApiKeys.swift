@@ -8,6 +8,6 @@
 import Foundation
 
 enum ApiKeys: String {
-    case google = ""
+    case google = "AIzaSyAVKYCo1DYul1Ye_44fJ663pnRcEoyeIIc"
     case weather = "8e81245c4c9ba68876e7cfefbe293380"
 }

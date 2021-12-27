@@ -34,7 +34,7 @@ final class ChangeRateViewController: UIViewController {
         bind()
         viewModel.viewDidLoad()
     }
-
+    
     private func setupUI() {
         dollarField.isUserInteractionEnabled = false
     }

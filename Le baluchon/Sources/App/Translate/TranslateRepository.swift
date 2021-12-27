@@ -31,7 +31,7 @@ final class TranslateRepository: TranslateRepositoryType {
     
     func getTranslation(for phrase: String, callBack: @escaping (Result<TranslateResponse, Error>) -> Void) {
         let endpoint = TranslateEndpoint(
-            ApiKey: "AIzaSyAVKYCo1DYul1Ye_44fJ663pnRcEoyeIIc",
+            ApiKey: ApiKeys.google.rawValue,
             q: phrase,
             sourceLang: "fr",
             targetLang: "en",

@@ -9,7 +9,7 @@ import XCTest
 @testable import Le_baluchon
 
 final class TranslateViewModelTest: XCTestCase {
-
+    
     func testWhenDidpressTranslateWithSuccessThenOutputsAreCorrectlyReturned() {
         let translatedTextExpectation = self.expectation(description: "Returned name translated Text")
         let mock = MockTranslateRepository(responses: .success)
@@ -31,7 +31,7 @@ final class TranslateViewModelTest: XCTestCase {
         
         waitForExpectations(timeout: 1.0, handler: nil)
     }
-
+    
     func testWhenDidpressTranslateWithFailureThenOutputsAreCorrectlyReturned() {
         let translatedTextExpectation = self.expectation(description: "Returned name translated Text")
         let mock = MockTranslateRepository(responses: .failure)
@@ -57,11 +57,11 @@ final class TranslateViewModelTest: XCTestCase {
 
 private struct MockTranslateRepository: TranslateRepositoryType {
     let responses: Responses
-
+    
     init(responses: Responses) {
         self.responses = responses
     }
-
+    
     struct Responses {
         var ongetTranslate: Result<TranslateResponse, Error>
     }
@@ -77,10 +77,10 @@ private extension MockTranslateRepository.Responses {
                 data: TranslateResponse.DataClass.init(
                     translations: [TranslateResponse.Translation.init(
                         translatedText: "My name is Valentin")
-                    ]
+                                  ]
                 )
             )
-        ))
+                                    ))
     }
     
     static var failure: MockTranslateRepository.Responses {
@@ -88,7 +88,7 @@ private extension MockTranslateRepository.Responses {
             ongetTranslate: .failure(MockError.mock)
         )
     }
-
+    
     enum MockError: Error {
         case mock
     }

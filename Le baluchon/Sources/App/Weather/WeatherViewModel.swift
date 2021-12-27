@@ -8,24 +8,24 @@
 import Foundation
 
 final class WeatherViewModel {
-
+    
     // MARK: - Properties
-
+    
     private let repository: WeatherRepositoryType
     
     private struct Constants {
         static let cityOne = "Lyon"
         static let cityTwo = "New York"
     }
-
+    
     // MARK: - Initializer
-
+    
     init(repository: WeatherRepositoryType) {
         self.repository = repository
     }
-
+    
     // MARK: - Outputs
-
+    
     var primaryTitleText = "Météo"
     var nameText1: ((String) -> Void)?
     var tempText1: ((String) -> Void)?
@@ -40,14 +40,14 @@ final class WeatherViewModel {
     var tempMaxText2: ((String) -> Void)?
     var humidityText2: ((String) -> Void)?
     var descriptionText2: ((String) -> Void)?
-
+    
     // MARK: - Inputs
-
+    
     func viewDidLoad() {
         initData()
         getData()
     }
-
+    
     private func initData() {
         nameText1?("Lyon")
         tempText1?("Temp :")
@@ -63,20 +63,20 @@ final class WeatherViewModel {
         humidityText2?("Humidité :")
         descriptionText2?("Description :")
     }
-
+    
     private func getData() {
         repository.getWeatherInfo(for: Constants.cityOne) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.nameText1?(response.name)
-                self?.tempText1?("Temp : \(response.main.temp) degré")
-                self?.tempMinText1?("Temp min : \(response.main.tempMin) degré")
-                self?.tempMaxText1?("Temp max : \(response.main.tempMin) degré")
+                self?.tempText1?("Temp : \(response.main.temp)°c")
+                self?.tempMinText1?("Temp min : \(response.main.tempMin)°c")
+                self?.tempMaxText1?("Temp max : \(response.main.tempMin)°c")
                 self?.humidityText1?("Humidité : \(response.main.humidity)%")
                 if response.weather.indices.contains(2) {
                     self?.descriptionText1?("\(response.weather[2])")
                 } else {
-                    self?.descriptionText1?("Aucune description disponible.")
+                    self?.descriptionText1?("Description : Aucune description disponible.")
                 }
             case .failure(let error):
                 print(error)
@@ -86,14 +86,14 @@ final class WeatherViewModel {
             switch result {
             case .success(let response):
                 self?.nameText2?(response.name)
-                self?.tempText2?("Temp : \(response.main.temp) degré")
-                self?.tempMinText2?("Temp min : \(response.main.tempMin) degré")
-                self?.tempMaxText2?("Temp max : \(response.main.tempMin) degré")
+                self?.tempText2?("Temp : \(response.main.temp)°c")
+                self?.tempMinText2?("Temp min : \(response.main.tempMin)°c")
+                self?.tempMaxText2?("Temp max : \(response.main.tempMin)°c")
                 self?.humidityText2?("Humidité : \(response.main.humidity)%")
                 if response.weather.indices.contains(2) {
                     self?.descriptionText2?("\(response.weather[2])")
                 } else {
-                    self?.descriptionText2?("Aucune description disponible.")
+                    self?.descriptionText2?("Description : Aucune description disponible.")
                 }
             case .failure(let error):
                 print(error)

@@ -10,9 +10,9 @@ import UIKit
 final class WeatherViewController: UIViewController {
     
     // MARK: - Properties
-
+    
     var viewModel: WeatherViewModel!
-
+    
     // MARK: - Outlets
     
     @IBOutlet private weak var titleLabel: UILabel!
@@ -89,9 +89,9 @@ final class WeatherViewController: UIViewController {
                 self?.temp2Label.text = text
             }
         }
-        viewModel.tempMinText1 = { [weak self] text in
+        viewModel.tempMinText2 = { [weak self] text in
             DispatchQueue.main.async {
-                self?.tempMin1Label.text = text
+                self?.tempMin2Label.text = text
             }
         }
         viewModel.tempMaxText2 = { [weak self] text in
