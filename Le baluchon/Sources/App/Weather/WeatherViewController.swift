@@ -59,16 +59,6 @@ final class WeatherViewController: UIViewController {
                 self?.temp1Label.text = text
             }
         }
-        viewModel.tempMinText1 = { [weak self] text in
-            DispatchQueue.main.async {
-                self?.tempMin1Label.text = text
-            }
-        }
-        viewModel.tempMaxText1 = { [weak self] text in
-            DispatchQueue.main.async {
-                self?.tempMax1Label.text = text
-            }
-        }
         viewModel.humidityText1 = { [weak self] text in
             DispatchQueue.main.async {
                 self?.humidity1Label.text = text
@@ -87,16 +77,6 @@ final class WeatherViewController: UIViewController {
         viewModel.tempText2 = { [weak self] text in
             DispatchQueue.main.async {
                 self?.temp2Label.text = text
-            }
-        }
-        viewModel.tempMinText2 = { [weak self] text in
-            DispatchQueue.main.async {
-                self?.tempMin2Label.text = text
-            }
-        }
-        viewModel.tempMaxText2 = { [weak self] text in
-            DispatchQueue.main.async {
-                self?.tempMax2Label.text = text
             }
         }
         viewModel.humidityText2 = { [weak self] text in

@@ -29,15 +29,11 @@ final class WeatherViewModel {
     var primaryTitleText = "Météo"
     var nameText1: ((String) -> Void)?
     var tempText1: ((String) -> Void)?
-    var tempMinText1: ((String) -> Void)?
-    var tempMaxText1: ((String) -> Void)?
     var humidityText1: ((String) -> Void)?
     var descriptionText1: ((String) -> Void)?
     
     var nameText2: ((String) -> Void)?
     var tempText2: ((String) -> Void)?
-    var tempMinText2: ((String) -> Void)?
-    var tempMaxText2: ((String) -> Void)?
     var humidityText2: ((String) -> Void)?
     var descriptionText2: ((String) -> Void)?
     
@@ -51,15 +47,11 @@ final class WeatherViewModel {
     private func initData() {
         nameText1?("Lyon")
         tempText1?("Temp :")
-        tempMinText1?("Temp min :")
-        tempMaxText1?("Temp max :")
         humidityText1?("Humidité :")
         descriptionText1?("Description :")
         
         nameText2?("New York")
         tempText2?("Temp :")
-        tempMinText2?("Temp min :")
-        tempMaxText2?("Temp max :")
         humidityText2?("Humidité :")
         descriptionText2?("Description :")
     }
@@ -70,8 +62,6 @@ final class WeatherViewModel {
             case .success(let response):
                 self?.nameText1?(response.name)
                 self?.tempText1?("Temp : \(response.main.temp)°c")
-                self?.tempMinText1?("Temp min : \(response.main.tempMin)°c")
-                self?.tempMaxText1?("Temp max : \(response.main.tempMin)°c")
                 self?.humidityText1?("Humidité : \(response.main.humidity)%")
                 if response.weather.indices.contains(2) {
                     self?.descriptionText1?("\(response.weather[2])")
@@ -87,8 +77,6 @@ final class WeatherViewModel {
             case .success(let response):
                 self?.nameText2?(response.name)
                 self?.tempText2?("Temp : \(response.main.temp)°c")
-                self?.tempMinText2?("Temp min : \(response.main.tempMin)°c")
-                self?.tempMaxText2?("Temp max : \(response.main.tempMin)°c")
                 self?.humidityText2?("Humidité : \(response.main.humidity)%")
                 if response.weather.indices.contains(2) {
                     self?.descriptionText2?("\(response.weather[2])")

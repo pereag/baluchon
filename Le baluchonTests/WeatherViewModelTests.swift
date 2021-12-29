@@ -14,10 +14,6 @@ final class WeatherViewModelTests: XCTestCase {
         let nameText1Expectation = self.expectation(description: "Returned name text 1")
         let tempText1Expectation = self.expectation(description: "Returned temp text 1")
         tempText1Expectation.expectedFulfillmentCount = 2
-        let tempMinText1Expectation = self.expectation(description: "Returned temp min text 1")
-        tempMinText1Expectation.expectedFulfillmentCount = 2
-        let tempMaxText1Expectation = self.expectation(description: "Returned temp min text 1")
-        tempMaxText1Expectation.expectedFulfillmentCount = 2
         let humidityText1Expectation = self.expectation(description: "Returned humidity text 1")
         humidityText1Expectation.expectedFulfillmentCount = 2
         let descriptionText1Expectation = self.expectation(description: "Returned description text 2")
@@ -27,10 +23,6 @@ final class WeatherViewModelTests: XCTestCase {
         nameText2Expectation.expectedFulfillmentCount = 2
         let tempText2Expectation = self.expectation(description: "Returned temp text 2")
         tempText2Expectation.expectedFulfillmentCount = 2
-        let tempMinText2Expectation = self.expectation(description: "Returned temp min text 2")
-        tempMinText2Expectation.expectedFulfillmentCount = 2
-        let tempMaxText2Expectation = self.expectation(description: "Returned temp min text 2")
-        tempMaxText2Expectation.expectedFulfillmentCount = 2
         let humidityText2Expectation = self.expectation(description: "Returned humidity text 2")
         humidityText2Expectation.expectedFulfillmentCount = 2
         let descriptionText2Expectation = self.expectation(description: "Returned description text 2")
@@ -51,15 +43,6 @@ final class WeatherViewModelTests: XCTestCase {
         viewModel.tempText1 = { _ in
             tempText1Expectation.fulfill()
         }
-        
-        viewModel.tempMinText1 = { _ in
-            tempMinText1Expectation.fulfill()
-        }
-        
-        viewModel.tempMaxText1 = { _ in
-            tempMaxText1Expectation.fulfill()
-        }
-        
         viewModel.humidityText1 = { _ in
             humidityText1Expectation.fulfill()
         }
@@ -75,15 +58,6 @@ final class WeatherViewModelTests: XCTestCase {
         viewModel.tempText2 = { _ in
             tempText2Expectation.fulfill()
         }
-        
-        viewModel.tempMinText2 = { _ in
-            tempMinText2Expectation.fulfill()
-        }
-        
-        viewModel.tempMaxText2 = { _ in
-            tempMaxText2Expectation.fulfill()
-        }
-        
         viewModel.humidityText2 = { _ in
             humidityText2Expectation.fulfill()
         }
@@ -126,8 +100,8 @@ private extension MockWeatherRepository.Responses {
                 main: .init(
                     temp: 2.0,
                     feelsLike: 2.0,
-                    tempMin: 2.0,
-                    tempMax: 2.0,
+                    tempMin: 1,
+                    tempMax: 1,
                     pressure: 1,
                     humidity: 1
                 ),

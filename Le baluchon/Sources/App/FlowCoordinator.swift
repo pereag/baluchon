@@ -35,7 +35,7 @@ final class FlowCoordinator {
         initTabBarDesign()
     }
     
-    func initTabBarDesign() {
+    private func initTabBarDesign() {
         let tabBarItem1 = self.tabBarController.tabBar.items?[0]
         tabBarItem1?.title = "Taux de change"
         tabBarItem1?.image = UIImage(systemName: "dollarsign.circle.fill")
