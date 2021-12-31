@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,29 +13,29 @@
             <objects>
                 <viewController storyboardIdentifier="TranslateViewController" id="TVf-dF-17Z" customClass="TranslateViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a2h-O8-MI8">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduction" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWM-bh-yg0">
-                                <rect key="frame" x="141.66666666666666" y="87" width="144.99999999999997" height="25"/>
+                                <rect key="frame" x="87.5" y="43" width="145" height="25"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Francais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQs-Cc-sfx">
-                                <rect key="frame" x="16" y="139" width="396" height="20"/>
+                                <rect key="frame" x="16" y="95" width="288" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anglais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WE7-Yo-GyE">
-                                <rect key="frame" x="16" y="361" width="396" height="20"/>
+                                <rect key="frame" x="16" y="271.5" width="288" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Je suis un développeur Français." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-cI-oEx">
-                                <rect key="frame" x="16" y="168" width="396" height="167"/>
+                                <rect key="frame" x="16" y="124" width="288" height="121.5"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gJk-cI-oEx" secondAttribute="height" multiplier="339:143" id="twc-lA-Qd5"/>
@@ -45,7 +45,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I'm french developer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mK3-Fp-OWd">
-                                <rect key="frame" x="16" y="389" width="396" height="167"/>
+                                <rect key="frame" x="16" y="299.5" width="288" height="121.5"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mK3-Fp-OWd" secondAttribute="height" multiplier="339:143" id="ofg-Xt-lKV"/>
@@ -55,7 +55,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dF-q0-QUx">
-                                <rect key="frame" x="16" y="823.33333333333337" width="396" height="60.666666666666629"/>
+                                <rect key="frame" x="16" y="516" width="288" height="44"/>
                                 <color key="backgroundColor" red="0.1294117719" green="0.55294120309999995" blue="0.63137257099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3dF-q0-QUx" secondAttribute="height" multiplier="339:52" id="OnY-vk-cvf"/>
@@ -109,35 +109,35 @@
             <objects>
                 <viewController storyboardIdentifier="ChangeRateViewController" id="ak5-5H-p5d" customClass="ChangeRateViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pFw-Fa-ZAA">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taux de change" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymq-Wg-fKJ">
-                                <rect key="frame" x="108" y="86" width="212" height="25"/>
+                                <rect key="frame" x="54" y="42" width="212" height="25"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Fy-na-O4U">
-                                <rect key="frame" x="16" y="160" width="396" height="34"/>
+                                <rect key="frame" x="16" y="116" width="288" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qz-ps-pmX">
-                                <rect key="frame" x="16" y="223" width="396" height="20"/>
+                                <rect key="frame" x="16" y="179" width="288" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gh9-2p-pRA">
-                                <rect key="frame" x="16" y="251" width="395" height="34"/>
+                                <rect key="frame" x="16" y="207" width="287" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJx-FK-7IZ">
-                                <rect key="frame" x="16" y="822.33333333333337" width="396" height="60.666666666666629"/>
+                                <rect key="frame" x="16" y="515" width="288" height="44"/>
                                 <color key="backgroundColor" red="0.1294117719" green="0.55294120309999995" blue="0.63137257099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qJx-FK-7IZ" secondAttribute="height" multiplier="189:29" id="v8F-As-D6X"/>
@@ -150,7 +150,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piF-Sb-9C6">
-                                <rect key="frame" x="16" y="132" width="396" height="20"/>
+                                <rect key="frame" x="16" y="88" width="288" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -197,59 +197,59 @@
             <objects>
                 <viewController storyboardIdentifier="WeatherViewController" id="D0x-Mr-ZkH" customClass="WeatherViewController" customModule="Le_baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F2n-bM-PAU">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGY-lC-NZH">
                                 <rect key="frame" x="0.0" y="126" width="428" height="766"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1n-TH-FKY">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="766"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="486"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lyon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc9-Up-7DE">
-                                                <rect key="frame" x="16" y="8.0000000000000018" width="396" height="26.666666666666671"/>
+                                                <rect key="frame" x="16" y="8" width="288" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qv-ZY-8eo">
-                                                <rect key="frame" x="16" y="54.666666666666657" width="396" height="20"/>
+                                                <rect key="frame" x="16" y="54.5" width="288" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidité :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0LG-m8-THZ">
-                                                <rect key="frame" x="16" y="89.666666666666657" width="396" height="20"/>
+                                                <rect key="frame" x="16" y="89.5" width="288" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apv-VJ-bca">
-                                                <rect key="frame" x="16" y="124.66666666666664" width="396" height="19.333333333333329"/>
+                                                <rect key="frame" x="16" y="124.5" width="288" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrk-NH-hiz">
-                                                <rect key="frame" x="16" y="164" width="396" height="27"/>
+                                                <rect key="frame" x="16" y="164" width="288" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueW-Np-V1U">
-                                                <rect key="frame" x="16" y="206" width="396" height="20"/>
+                                                <rect key="frame" x="16" y="206" width="288" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidité :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gin-a6-qp0">
-                                                <rect key="frame" x="16" y="241" width="396" height="20"/>
+                                                <rect key="frame" x="16" y="241" width="288" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1de-FR-7et">
-                                                <rect key="frame" x="16" y="276" width="396" height="19.333333333333314"/>
+                                                <rect key="frame" x="16" y="276" width="288" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -293,7 +293,7 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Météo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJs-h9-Xui">
-                                <rect key="frame" x="172" y="86" width="84.333333333333314" height="25"/>
+                                <rect key="frame" x="118" y="42" width="84.5" height="25"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

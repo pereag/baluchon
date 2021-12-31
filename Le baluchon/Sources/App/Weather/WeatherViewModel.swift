@@ -63,8 +63,8 @@ final class WeatherViewModel {
                 self?.nameText1?(response.name)
                 self?.tempText1?("Temp : \(response.main.temp)°c")
                 self?.humidityText1?("Humidité : \(response.main.humidity)%")
-                if response.weather.indices.contains(2) {
-                    self?.descriptionText1?("\(response.weather[2])")
+                if !response.weather[0].weatherDescription.isEmpty {
+                    self?.descriptionText1?("Description : \(response.weather[0].weatherDescription)")
                 } else {
                     self?.descriptionText1?("Description : Aucune description disponible.")
                 }
@@ -78,8 +78,8 @@ final class WeatherViewModel {
                 self?.nameText2?(response.name)
                 self?.tempText2?("Temp : \(response.main.temp)°c")
                 self?.humidityText2?("Humidité : \(response.main.humidity)%")
-                if response.weather.indices.contains(2) {
-                    self?.descriptionText2?("\(response.weather[2])")
+                if !response.weather[0].weatherDescription.isEmpty {
+                    self?.descriptionText2?("Description : \(response.weather[0].weatherDescription)")
                 } else {
                     self?.descriptionText2?("Description : Aucune description disponible.")
                 }
