@@ -95,7 +95,7 @@ private extension MockWeatherRepository.Responses {
         return .init(
             ongetWeather: .success(WeatherResponse(
                 coord: .init(lon: 2.0, lat: 2.0),
-                weather: [],
+                weather: [.init(id: 1, main: "test", weatherDescription: "test", icon: "test")],
                 base: "toto",
                 main: .init(
                     temp: 2.0,
