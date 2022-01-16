@@ -11,6 +11,7 @@
 		D81A363A27734D1700CFCE2A /* TranslateViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A363927734D1700CFCE2A /* TranslateViewModelTest.swift */; };
 		D81A363C27734D7D00CFCE2A /* ChangeRateViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A363B27734D7D00CFCE2A /* ChangeRateViewModelTest.swift */; };
 		D8425B99273ADBC100C68638 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8425B98273ADBC100C68638 /* ApiKeys.swift */; };
+		D850F1622794268300974121 /* UIViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850F1612794268300974121 /* UIViewManager.swift */; };
 		D857E3822732DBDD00D28716 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857E37E2732DBDD00D28716 /* RequestBuilder.swift */; };
 		D857E3832732DBDD00D28716 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857E37F2732DBDD00D28716 /* HTTPClient.swift */; };
 		D857E3842732DBDD00D28716 /* RequestCancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857E3802732DBDD00D28716 /* RequestCancellationToken.swift */; };
@@ -55,6 +56,7 @@
 		D81A363927734D1700CFCE2A /* TranslateViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewModelTest.swift; sourceTree = "<group>"; };
 		D81A363B27734D7D00CFCE2A /* ChangeRateViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateViewModelTest.swift; sourceTree = "<group>"; };
 		D8425B98273ADBC100C68638 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		D850F1612794268300974121 /* UIViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewManager.swift; sourceTree = "<group>"; };
 		D857E37E2732DBDD00D28716 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		D857E37F2732DBDD00D28716 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D857E3802732DBDD00D28716 /* RequestCancellationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCancellationToken.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				D8E8F96B272BFD3F00785FD2 /* Translate */,
 				D8E8F965272BFAA000785FD2 /*  Change Rate */,
 				D8E0CBCC272E9B8200242FD5 /* FlowCoordinator.swift */,
+				D850F1612794268300974121 /* UIViewManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				D857E3832732DBDD00D28716 /* HTTPClient.swift in Sources */,
 				D8E8F979272C00B600785FD2 /* Screens.swift in Sources */,
 				D8E8F973272BFFCF00785FD2 /* WeatherViewController.swift in Sources */,
+				D850F1622794268300974121 /* UIViewManager.swift in Sources */,
 				D857E3952738075F00D28716 /* TranslateResponse.swift in Sources */,
 				D857E38B27357A2200D28716 /* WeatherRepository.swift in Sources */,
 				D8E8F968272BFB6900785FD2 /* ChangeRateViewController.swift in Sources */,
@@ -548,8 +552,9 @@
 				INFOPLIST_FILE = "Le baluchon/Ressources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -578,8 +583,9 @@
 				INFOPLIST_FILE = "Le baluchon/Ressources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

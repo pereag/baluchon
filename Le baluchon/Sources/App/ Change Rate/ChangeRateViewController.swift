@@ -18,7 +18,9 @@ final class ChangeRateViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var eurosLabel: UILabel!
     
-    @IBOutlet weak var eurosField: UITextField!
+    @IBOutlet weak var eurosField: UITextField! {
+        didSet { eurosField?.addDoneCancelToolbar() }
+    }
     
     @IBOutlet weak var dollarLabel: UILabel!
     
@@ -31,6 +33,8 @@ final class ChangeRateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        eurosField.delegate = self
+        self.hideKeyboardWhenTappedAround()
         bind()
         viewModel.viewDidLoad()
     }

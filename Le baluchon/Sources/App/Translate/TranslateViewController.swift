@@ -27,6 +27,7 @@ final class TranslateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         bind()
     }
     
@@ -45,3 +46,5 @@ final class TranslateViewController: UIViewController {
         viewModel.didPress(translate: text)
     }
 }
+
+
