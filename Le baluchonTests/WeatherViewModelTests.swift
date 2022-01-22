@@ -71,6 +71,29 @@ final class WeatherViewModelTests: XCTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
     }
     
+    func testWhenDidpressTranslateWithFailureThenOutputsAreCorrectlyReturned() {
+        let expectation = self.expectation(description: "Returned Alert")
+        let mock = MockWeatherRepository(responses: .failure)
+        let viewModel = WeatherViewModel(repository: mock)
+        
+        var counter = 0
+        
+        viewModel.displayedAlert = { alert in
+            if counter == 0 {
+            XCTAssertEqual(alert.title, "Alert")
+               XCTAssertEqual(alert.message, "Une erreur est survenue, veuillez réessayer plus tard.")
+               XCTAssertEqual(alert.cancelTitle, "Ok")
+               expectation.fulfill()
+            }
+            print("yolo",counter)
+            counter+=1
+        }
+        
+        viewModel.viewDidLoad()
+        
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
 }
 
 private struct MockWeatherRepository: WeatherRepositoryType {
@@ -116,5 +139,15 @@ private extension MockWeatherRepository.Responses {
                 cod: 1
             ))
         )
+    }
+    
+    static var failure: MockWeatherRepository.Responses {
+        return .init(
+            ongetWeather: .failure(MockError.mock)
+        )
+    }
+    
+    enum MockError: Error {
+        case mock
     }
 }

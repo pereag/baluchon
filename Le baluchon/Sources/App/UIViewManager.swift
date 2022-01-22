@@ -4,13 +4,7 @@
 //
 //  Created by Valc0d3 on 16/01/2022.
 //
-
-import Foundation
 import UIKit
-
-class UIViewManager: UIViewController {
-    
-}
 
 extension UIViewController: UITextFieldDelegate{
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -28,6 +22,14 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension UIViewController {
+    func presentAlert(content: AlertContent) {
+        let alertVC = UIAlertController( title: content.title, message: content.message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: content.cancelTitle, style: .cancel, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
     }
 }
 

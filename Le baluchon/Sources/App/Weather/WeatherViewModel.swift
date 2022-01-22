@@ -5,7 +5,7 @@
 //  Created by Valc0d3 on 29/10/2021.
 //
 
-import Foundation
+import UIKit
 
 final class WeatherViewModel {
     
@@ -37,6 +37,9 @@ final class WeatherViewModel {
     var humidityText2: ((String) -> Void)?
     var descriptionText2: ((String) -> Void)?
     
+    var displayedAlert: ((AlertContent) -> Void)?
+    var isLoading: ((Bool) -> Void)?
+    
     // MARK: - Inputs
     
     func viewDidLoad() {
@@ -57,18 +60,22 @@ final class WeatherViewModel {
     }
     
     private func getData() {
+        isLoading?(true)
         repository.getWeatherInfo(for: Constants.cityOne) { [weak self] result in
+            //self?.isLoading(false)
             switch result {
             case .success(let response):
                 self?.nameText1?(response.name)
-                self?.tempText1?("Temp : \(response.main.temp)°c")
+                self?.tempText1?("Temp : \(String(describing: response.main.temp))°c")
                 self?.humidityText1?("Humidité : \(response.main.humidity)%")
-                if !response.weather[0].weatherDescription.isEmpty {
-                    self?.descriptionText1?("Description : \(response.weather[0].weatherDescription)")
-                } else {
-                    self?.descriptionText1?("Description : Aucune description disponible.")
-                }
+                self?.descriptionText1?("Description : \(response.weather[0].weatherDescription)")
             case .failure(let error):
+                let alertContent = AlertContent(
+                   title: "Alert",
+                   message: "Une erreur est survenue, veuillez réessayer plus tard. ",
+                   cancelTitle: "Ok"
+                )
+                self?.displayedAlert?(alertContent)
                 print(error)
             }
         }
@@ -76,14 +83,16 @@ final class WeatherViewModel {
             switch result {
             case .success(let response):
                 self?.nameText2?(response.name)
-                self?.tempText2?("Temp : \(response.main.temp)°c")
+                self?.tempText2?("Temp : \(String(describing: response.main.temp))°c")
                 self?.humidityText2?("Humidité : \(response.main.humidity)%")
-                if !response.weather[0].weatherDescription.isEmpty {
-                    self?.descriptionText2?("Description : \(response.weather[0].weatherDescription)")
-                } else {
-                    self?.descriptionText2?("Description : Aucune description disponible.")
-                }
+                self?.descriptionText2?("Description : \(response.weather[0].weatherDescription)")
             case .failure(let error):
+                let alertContent = AlertContent(
+                   title: "Alert",
+                   message: "Une erreur est survenue, veuillez réessayer plus tard.",
+                   cancelTitle: "Ok"
+                )
+                self?.displayedAlert?(alertContent)
                 print(error)
             }
         }

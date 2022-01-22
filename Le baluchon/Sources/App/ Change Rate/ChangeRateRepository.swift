@@ -56,4 +56,3 @@ class ChangeRateRepository: ChangeRateRepositoryType {
         )
     }
 }
-

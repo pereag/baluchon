@@ -30,6 +30,7 @@
 		D860C61F2722E14600D2119A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D860C61D2722E14600D2119A /* Main.storyboard */; };
 		D860C6212722E14600D2119A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D860C6202722E14600D2119A /* Assets.xcassets */; };
 		D860C6242722E14600D2119A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D860C6222722E14600D2119A /* LaunchScreen.storyboard */; };
+		D8A79B45279560E3006A14DF /* AlerteContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A79B44279560E3006A14DF /* AlerteContent.swift */; };
 		D8E0CBCD272E9B8200242FD5 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E0CBCC272E9B8200242FD5 /* FlowCoordinator.swift */; };
 		D8E8F968272BFB6900785FD2 /* ChangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8F967272BFB6900785FD2 /* ChangeRateViewController.swift */; };
 		D8E8F96A272BFB9200785FD2 /* ChangeRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8F969272BFB9200785FD2 /* ChangeRateViewModel.swift */; };
@@ -78,6 +79,7 @@
 		D860C6232722E14600D2119A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D860C6252722E14600D2119A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D860C62A2722E14700D2119A /* Le baluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le baluchonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8A79B44279560E3006A14DF /* AlerteContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlerteContent.swift; sourceTree = "<group>"; };
 		D8E0CBCC272E9B8200242FD5 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		D8E8F967272BFB6900785FD2 /* ChangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateViewController.swift; sourceTree = "<group>"; };
 		D8E8F969272BFB9200785FD2 /* ChangeRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateViewModel.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				D8E8F965272BFAA000785FD2 /*  Change Rate */,
 				D8E0CBCC272E9B8200242FD5 /* FlowCoordinator.swift */,
 				D850F1612794268300974121 /* UIViewManager.swift */,
+				D8A79B44279560E3006A14DF /* AlerteContent.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			files = (
 				D857E3852732DBDD00D28716 /* Endpoint.swift in Sources */,
 				D8E0CBCD272E9B8200242FD5 /* FlowCoordinator.swift in Sources */,
+				D8A79B45279560E3006A14DF /* AlerteContent.swift in Sources */,
 				D857E38D2737EFFF00D28716 /* JSONparser.swift in Sources */,
 				D857E389273579FC00D28716 /* TranslateRepository.swift in Sources */,
 				D8E8F96F272BFF2B00785FD2 /* TranslateViewModel.swift in Sources */,

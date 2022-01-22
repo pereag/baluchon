@@ -49,6 +49,11 @@ final class ChangeRateViewController: UIViewController {
                 self?.dollarField.text = text
             }
         }
+        viewModel.displayedAlert = { [weak self] alertContent in
+            DispatchQueue.main.async {
+                self?.presentAlert(content: alertContent)
+            }
+        }
     }
     
     // MARK: - ACTIONS

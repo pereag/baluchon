@@ -32,24 +32,51 @@ final class TranslateViewModelTest: XCTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
     }
     
-    func testWhenDidpressTranslateWithFailureThenOutputsAreCorrectlyReturned() {
-        let translatedTextExpectation = self.expectation(description: "Returned name translated Text")
-        let mock = MockTranslateRepository(responses: .failure)
+    func testWhenDidpressTranslateWithSuccesThenOutputsAreCorrectlyReturned() {
+        let expectation = self.expectation(description: "Returned Alert")
+        let mock = MockTranslateRepository(responses: .success)
         let viewModel = TranslateViewModel(repository: mock)
         
         var counter = 0
         
-        viewModel.translatedText = { text in
-            if counter == 1 {
-                XCTAssertEqual(text, "Erreur: Une erreur de communication avec l'API est survenue")
-                translatedTextExpectation.fulfill()
+        viewModel.displayedAlert = { alert in
+            if counter == 0 {
+            XCTAssertEqual(alert.title, "Alert")
+               XCTAssertEqual(alert.message, "Le champs francais est vide.")
+               XCTAssertEqual(alert.cancelTitle, "Ok")
+               expectation.fulfill()
             }
             counter+=1
         }
         
         viewModel.viewDidLoad()
         
-        viewModel.didPress(translate: "Je m'appel Valentin")
+        viewModel.didPress(translate: "")
+        
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testWhenDidpressTranslateWithFailureThenOutputsAreCorrectlyReturned() {
+        let expectation = self.expectation(description: "Returned Alert")
+        let mock = MockTranslateRepository(responses: .failure)
+        let viewModel = TranslateViewModel(repository: mock)
+        
+        var counter = 0
+        
+        viewModel.displayedAlert = { alert in
+            if counter == 0 {
+            XCTAssertEqual(alert.title, "Alert")
+               XCTAssertEqual(alert.message, "Une erreur est survenue, veuillez réessayer plus tard.")
+               XCTAssertEqual(alert.cancelTitle, "Ok")
+               expectation.fulfill()
+            }
+            print("yolo",counter)
+            counter+=1
+        }
+        
+        viewModel.viewDidLoad()
+        
+        viewModel.didPress(translate: "Docteur qui ?")
         
         waitForExpectations(timeout: 1.0, handler: nil)
     }

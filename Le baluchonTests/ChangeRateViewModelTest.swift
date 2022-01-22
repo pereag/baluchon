@@ -32,22 +32,47 @@ final class ChangeRateViewModelTest: XCTestCase {
     }
     
     func testWhenDidpressChangeRateWithFailureThenOutputsAreCorrectlyReturned() {
-        let displayedResultExpectation = self.expectation(description: "Returned result text")
+        let expectation = self.expectation(description: "Returned Alert")
         
         let mock = MockChangeRateRepository(responses: .failure)
         let viewModel = ChangeRateViewModel(repository: mock)
         
         var counter = 0
         
-        viewModel.displayedResult = { text in
-            if counter == 1 {
-                XCTAssertEqual(text, "Erreur: Une erreur est survenue")
-                displayedResultExpectation.fulfill()
+        viewModel.displayedAlert = { alert in
+            if counter == 0 {
+            XCTAssertEqual(alert.title, "Alert")
+               XCTAssertEqual(alert.message, "Une erreur est survenue, veuillez réessayer plus tard.")
+               XCTAssertEqual(alert.cancelTitle, "Ok")
+               expectation.fulfill()
             }
             counter+=1
         }
         viewModel.viewDidLoad()
         viewModel.didPressChangeRate(for: "1.2")
+        
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testWhenDidpressChangeRateWithSuccesThenEmptyOutputsAreCorrectyReturned() {
+        let expectation = self.expectation(description: "Returned Alert")
+        
+        let mock = MockChangeRateRepository(responses: .failure)
+        let viewModel = ChangeRateViewModel(repository: mock)
+        
+        var counter = 0
+        
+        viewModel.displayedAlert = { alert in
+            if counter == 0 {
+            XCTAssertEqual(alert.title, "Alert")
+               XCTAssertEqual(alert.message, "Le champs euros est vide.")
+               XCTAssertEqual(alert.cancelTitle, "Ok")
+               expectation.fulfill()
+            }
+            counter+=1
+        }
+        viewModel.viewDidLoad()
+        viewModel.didPressChangeRate(for: "")
         
         waitForExpectations(timeout: 1.0, handler: nil)
     }

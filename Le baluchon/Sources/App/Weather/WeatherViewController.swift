@@ -89,5 +89,10 @@ final class WeatherViewController: UIViewController {
                 self?.description2Label.text = text
             }
         }
+        viewModel.displayedAlert = { [weak self] alertContent in
+            DispatchQueue.main.async {
+                self?.presentAlert(content: alertContent)
+            }
+        }
     }
 }

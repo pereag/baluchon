@@ -24,6 +24,8 @@ final class TranslateViewModel {
     let translateButtonTitle = "Traduire"
     var translatedText: ((String) -> Void)?
     
+    var displayedAlert: ((AlertContent) -> Void)?
+    
     // MARK: - Inputs
     
     func viewDidLoad() {
@@ -31,14 +33,29 @@ final class TranslateViewModel {
     }
     
     func didPress(translate text: String) {
-        repository.getTranslation(for: text) { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.handle(response)
-            case .failure(let error):
-                self?.translatedText?("Erreur: Une erreur de communication avec l'API est survenue")
-                print(error)
+        if !text.isEmpty {
+            repository.getTranslation(for: text) { [weak self] result in
+                switch result {
+                case .success(let response):
+                    self?.handle(response)
+                    print(response)
+                case .failure(let error):
+                    let alertContent = AlertContent(
+                       title: "Alert",
+                       message: "Une erreur est survenue, veuillez réessayer plus tard.",
+                       cancelTitle: "Ok"
+                    )
+                    self?.displayedAlert?(alertContent)
+                    print(error)
+                }
             }
+        } else {
+            let alertContent = AlertContent(
+               title: "Alert",
+               message: "Le champs francais est vide.",
+               cancelTitle: "Ok"
+            )
+            self.displayedAlert?(alertContent)
         }
     }
     

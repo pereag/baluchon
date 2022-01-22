@@ -37,6 +37,11 @@ final class TranslateViewController: UIViewController {
                 self?.englishField.text = text
             }
         }
+        viewModel.displayedAlert = { [weak self] alertContent in
+            DispatchQueue.main.async {
+                self?.presentAlert(content: alertContent)
+            }
+        }
     }
     
     // MARK: - Actions
