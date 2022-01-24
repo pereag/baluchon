@@ -43,6 +43,14 @@ final class WeatherViewModel {
     // MARK: - Inputs
     
     func viewDidLoad() {
+        refresh()
+    }
+    
+    func didSwipeForRefresh() {
+        refresh()
+    }
+    
+    private func refresh() {
         initData()
         getData()
     }
@@ -62,7 +70,6 @@ final class WeatherViewModel {
     private func getData() {
         isLoading?(true)
         repository.getWeatherInfo(for: Constants.cityOne) { [weak self] result in
-            //self?.isLoading(false)
             switch result {
             case .success(let response):
                 self?.nameText1?(response.name)
@@ -72,12 +79,13 @@ final class WeatherViewModel {
             case .failure(let error):
                 let alertContent = AlertContent(
                    title: "Alert",
-                   message: "Une erreur est survenue, veuillez réessayer plus tard. ",
+                   message: "Une erreur est survenue, veuillez réessayer plus tard.",
                    cancelTitle: "Ok"
                 )
                 self?.displayedAlert?(alertContent)
                 print(error)
             }
+            self?.isLoading?(false)
         }
         repository.getWeatherInfo(for: Constants.cityTwo) { [weak self] result in
             switch result {
@@ -95,6 +103,7 @@ final class WeatherViewModel {
                 self?.displayedAlert?(alertContent)
                 print(error)
             }
+            self?.isLoading?(false)
         }
     }
 }

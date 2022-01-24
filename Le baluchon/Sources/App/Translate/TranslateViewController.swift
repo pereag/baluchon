@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TranslateViewController: UIViewController {
+final class TranslateViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - Properties
     
@@ -28,6 +28,7 @@ final class TranslateViewController: UIViewController {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        self.addButtonDoneOnUITextView()
         bind()
     }
     
@@ -42,6 +43,19 @@ final class TranslateViewController: UIViewController {
                 self?.presentAlert(content: alertContent)
             }
         }
+    }
+    
+    private func addButtonDoneOnUITextView() {
+        let toolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+                let flexSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
+                let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissMyKeyboard))
+                toolbar.setItems([flexSpace, doneBtn], animated: false)
+                toolbar.sizeToFit()
+                self.frenchField.inputAccessoryView = toolbar
+    }
+    
+    @objc func dismissMyKeyboard() {
+        view.endEditing(true)
     }
     
     // MARK: - Actions

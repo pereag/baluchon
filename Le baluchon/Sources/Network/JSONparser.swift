@@ -7,8 +7,11 @@
 
 import Foundation
 
-enum ParserError: Error {
+enum ParserError: Error, Equatable {
     case badParsing(Error)
+    static func == (lhs: ParserError, rhs: ParserError) -> Bool {
+        return String(describing: lhs) == String(describing: rhs)
+    }
 }
 
 protocol JSONParserType {

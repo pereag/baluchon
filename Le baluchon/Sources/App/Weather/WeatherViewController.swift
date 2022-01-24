@@ -15,13 +15,15 @@ final class WeatherViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var infoView: UIView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet private weak var titleLabel: UILabel!
+    
     @IBOutlet weak var city1Label: UILabel!
+    
     @IBOutlet weak var temp1Label: UILabel!
-    
-    @IBOutlet weak var tempMin1Label: UILabel!
-    
-    @IBOutlet weak var tempMax1Label: UILabel!
     
     @IBOutlet weak var humidity1Label: UILabel!
     
@@ -30,11 +32,7 @@ final class WeatherViewController: UIViewController {
     @IBOutlet weak var city2Label: UILabel!
     
     @IBOutlet weak var temp2Label: UILabel!
-    
-    @IBOutlet weak var tempMin2Label: UILabel!
-    
-    @IBOutlet weak var tempMax2Label: UILabel!
-    
+
     @IBOutlet weak var humidity2Label: UILabel!
     
     @IBOutlet weak var description2Label: UILabel!
@@ -45,6 +43,28 @@ final class WeatherViewController: UIViewController {
         super.viewDidLoad()
         bind()
         viewModel.viewDidLoad()
+        self.activityIndicatorManager()
+        self.initUISwipeGestureRecognizer()
+    }
+    
+    private func activityIndicatorManager() {
+        viewModel.isLoading = { [weak self] isLoading in
+            DispatchQueue.main.async {
+                if isLoading {
+                    self?.activityIndicator.alpha = 1
+                    self?.infoView.alpha = 0
+                } else {
+                    self?.activityIndicator.alpha = 0
+                    self?.infoView.alpha = 1
+                }
+            }
+        }
+    }
+    
+    private func initUISwipeGestureRecognizer() {
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
     }
     
     private func bind() {
@@ -93,6 +113,24 @@ final class WeatherViewController: UIViewController {
             DispatchQueue.main.async {
                 self?.presentAlert(content: alertContent)
             }
+            
         }
     }
+    
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case .down:
+                viewModel.didSwipeForRefresh()
+            default:
+                break
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func refreshGestureReconizer(_ sender: UIPanGestureRecognizer) {
+    }
+    
 }

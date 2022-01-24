@@ -10,6 +10,67 @@ import XCTest
 
 final class WeatherViewModelTests: XCTestCase {
     
+    func testWhendidSwipeForRefreshThenOutputsAreCorrectlyReturned() {
+        let nameText1Expectation = self.expectation(description: "Returned name text 1")
+        let tempText1Expectation = self.expectation(description: "Returned temp text 1")
+        tempText1Expectation.expectedFulfillmentCount = 2
+        let humidityText1Expectation = self.expectation(description: "Returned humidity text 1")
+        humidityText1Expectation.expectedFulfillmentCount = 2
+        let descriptionText1Expectation = self.expectation(description: "Returned description text 2")
+        descriptionText1Expectation.expectedFulfillmentCount = 2
+        
+        let nameText2Expectation = self.expectation(description: "Returned name text 2")
+        nameText2Expectation.expectedFulfillmentCount = 2
+        let tempText2Expectation = self.expectation(description: "Returned temp text 2")
+        tempText2Expectation.expectedFulfillmentCount = 2
+        let humidityText2Expectation = self.expectation(description: "Returned humidity text 2")
+        humidityText2Expectation.expectedFulfillmentCount = 2
+        let descriptionText2Expectation = self.expectation(description: "Returned description text 2")
+        descriptionText2Expectation.expectedFulfillmentCount = 2
+        
+        let mock = MockWeatherRepository(responses: .success)
+        let viewModel = WeatherViewModel(repository: mock)
+        
+        var counter = 0
+        viewModel.nameText1 = { text in
+            if counter == 1 {
+                XCTAssertEqual(text, "toto")
+                nameText1Expectation.fulfill()
+            }
+            counter+=1
+        }
+        
+        viewModel.tempText1 = { _ in
+            tempText1Expectation.fulfill()
+        }
+        viewModel.humidityText1 = { _ in
+            humidityText1Expectation.fulfill()
+        }
+        
+        viewModel.descriptionText1 = { _ in
+            descriptionText1Expectation.fulfill()
+        }
+        
+        viewModel.nameText2 = { _ in
+            nameText2Expectation.fulfill()
+        }
+        
+        viewModel.tempText2 = { _ in
+            tempText2Expectation.fulfill()
+        }
+        viewModel.humidityText2 = { _ in
+            humidityText2Expectation.fulfill()
+        }
+        
+        viewModel.descriptionText2 = { _ in
+            descriptionText2Expectation.fulfill()
+        }
+        
+        viewModel.didSwipeForRefresh()
+        
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
     func testWhenViewDidLoadThenOutputsAreCorrectlyReturned() {
         let nameText1Expectation = self.expectation(description: "Returned name text 1")
         let tempText1Expectation = self.expectation(description: "Returned temp text 1")

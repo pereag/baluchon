@@ -8,7 +8,6 @@
 import Foundation
 
 final class RequestBuilder {
-    
     func build(from endpoint: Endpoint) -> URLRequest? {
         guard let url = url(from: endpoint.path, queryParameters: endpoint.queryParameters) else {
             return nil

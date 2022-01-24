@@ -7,7 +7,7 @@
 import UIKit
 
 extension UIViewController: UITextFieldDelegate{
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextView) -> Bool {
         textField.resignFirstResponder()
         return true;
     }

@@ -10,6 +10,8 @@
 		D81A36382770EE6E00CFCE2A /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A36372770EE6E00CFCE2A /* WeatherViewModelTests.swift */; };
 		D81A363A27734D1700CFCE2A /* TranslateViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A363927734D1700CFCE2A /* TranslateViewModelTest.swift */; };
 		D81A363C27734D7D00CFCE2A /* ChangeRateViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A363B27734D7D00CFCE2A /* ChangeRateViewModelTest.swift */; };
+		D81A7023279F095100E40D7B /* RequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A7022279F095100E40D7B /* RequestBuilderTests.swift */; };
+		D81A7025279F0C9600E40D7B /* JSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A7024279F0C9600E40D7B /* JSONParserTests.swift */; };
 		D8425B99273ADBC100C68638 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8425B98273ADBC100C68638 /* ApiKeys.swift */; };
 		D850F1622794268300974121 /* UIViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D850F1612794268300974121 /* UIViewManager.swift */; };
 		D857E3822732DBDD00D28716 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857E37E2732DBDD00D28716 /* RequestBuilder.swift */; };
@@ -56,6 +58,8 @@
 		D81A36372770EE6E00CFCE2A /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
 		D81A363927734D1700CFCE2A /* TranslateViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewModelTest.swift; sourceTree = "<group>"; };
 		D81A363B27734D7D00CFCE2A /* ChangeRateViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateViewModelTest.swift; sourceTree = "<group>"; };
+		D81A7022279F095100E40D7B /* RequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
+		D81A7024279F0C9600E40D7B /* JSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserTests.swift; sourceTree = "<group>"; };
 		D8425B98273ADBC100C68638 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		D850F1612794268300974121 /* UIViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewManager.swift; sourceTree = "<group>"; };
 		D857E37E2732DBDD00D28716 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				D81A36372770EE6E00CFCE2A /* WeatherViewModelTests.swift */,
 				D81A363927734D1700CFCE2A /* TranslateViewModelTest.swift */,
 				D81A363B27734D7D00CFCE2A /* ChangeRateViewModelTest.swift */,
+				D81A7022279F095100E40D7B /* RequestBuilderTests.swift */,
+				D81A7024279F0C9600E40D7B /* JSONParserTests.swift */,
 			);
 			path = "Le baluchonTests";
 			sourceTree = "<group>";
@@ -393,7 +399,9 @@
 			files = (
 				D81A36382770EE6E00CFCE2A /* WeatherViewModelTests.swift in Sources */,
 				D81A363C27734D7D00CFCE2A /* ChangeRateViewModelTest.swift in Sources */,
+				D81A7025279F0C9600E40D7B /* JSONParserTests.swift in Sources */,
 				D81A363A27734D1700CFCE2A /* TranslateViewModelTest.swift in Sources */,
+				D81A7023279F095100E40D7B /* RequestBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +621,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XDZ2F43RRZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -639,6 +648,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XDZ2F43RRZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
