@@ -8,7 +8,7 @@
 import Foundation
 
 enum ParserError: Error, Equatable {
-    case badParsing(Error)
+    case badParsing(String?)
     static func == (lhs: ParserError, rhs: ParserError) -> Bool {
         return String(describing: lhs) == String(describing: rhs)
     }
@@ -24,7 +24,7 @@ final class JSONParser: JSONParserType {
             let object = try JSONDecoder().decode(C.self, from: data)
             return .success(object)
         } catch let error {
-            return .failure(ParserError.badParsing(error))
+            return .failure(ParserError.badParsing("\(error)"))
         }
     }
 }

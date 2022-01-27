@@ -15,18 +15,18 @@ final class ChangeRateViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var eurosLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var eurosLabel: UILabel!
     
-    @IBOutlet weak var eurosField: UITextField! {
+    @IBOutlet private weak var eurosField: UITextField! {
         didSet { eurosField?.addDoneCancelToolbar() }
     }
     
-    @IBOutlet weak var dollarLabel: UILabel!
+    @IBOutlet private weak var dollarLabel: UILabel!
     
-    @IBOutlet weak var dollarField: UITextField!
+    @IBOutlet private weak var dollarField: UITextField!
     
-    @IBOutlet weak var converterButton: UIButton!
+    @IBOutlet private weak var converterButton: UIButton!
     
     // MARK: - View life cycles
     
@@ -58,7 +58,7 @@ final class ChangeRateViewController: UIViewController {
     
     // MARK: - ACTIONS
     
-    @IBAction func didPressConverterButton(_ sender: UIButton) {
+    @IBAction private func didPressConverterButton(_ sender: UIButton) {
         viewModel.didPressChangeRate(for: eurosField.text!)
     }
 }

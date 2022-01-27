@@ -16,11 +16,11 @@ final class TranslateViewController: UIViewController, UITextViewDelegate {
     // MARK: - Outlets
     
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet weak var frenchLabel: UILabel!
-    @IBOutlet weak var frenchField: UITextView!
-    @IBOutlet weak var englishLabel: UILabel!
-    @IBOutlet weak var englishField: UITextView!
-    @IBOutlet weak var translateButton: UIButton!
+    @IBOutlet private weak var frenchLabel: UILabel!
+    @IBOutlet private weak var frenchField: UITextView!
+    @IBOutlet private weak var englishLabel: UILabel!
+    @IBOutlet private weak var englishField: UITextView!
+    @IBOutlet private weak var translateButton: UIButton!
     
     // MARK: - View life cycles
     

@@ -15,27 +15,27 @@ final class WeatherViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var infoView: UIView!
+    @IBOutlet private weak var infoView: UIView!
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet private weak var titleLabel: UILabel!
     
-    @IBOutlet weak var city1Label: UILabel!
+    @IBOutlet private weak var city1Label: UILabel!
     
-    @IBOutlet weak var temp1Label: UILabel!
+    @IBOutlet private weak var temp1Label: UILabel!
     
-    @IBOutlet weak var humidity1Label: UILabel!
+    @IBOutlet private weak var humidity1Label: UILabel!
     
-    @IBOutlet weak var descrition1Label: UILabel!
+    @IBOutlet private weak var descrition1Label: UILabel!
     
-    @IBOutlet weak var city2Label: UILabel!
+    @IBOutlet private weak var city2Label: UILabel!
     
-    @IBOutlet weak var temp2Label: UILabel!
+    @IBOutlet private weak var temp2Label: UILabel!
 
-    @IBOutlet weak var humidity2Label: UILabel!
+    @IBOutlet private weak var humidity2Label: UILabel!
     
-    @IBOutlet weak var description2Label: UILabel!
+    @IBOutlet private weak var description2Label: UILabel!
     
     // MARK: - View life cycles
     
@@ -130,7 +130,7 @@ final class WeatherViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func refreshGestureReconizer(_ sender: UIPanGestureRecognizer) {
+    @IBAction private func refreshGestureReconizer(_ sender: UIPanGestureRecognizer) {
     }
     
 }
