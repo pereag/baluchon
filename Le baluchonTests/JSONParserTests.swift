@@ -44,7 +44,7 @@ final class JSONparserTests: XCTestCase {
             let result: Result<MockCodable, ParserError> = try! jsonParser.processCodableResponse(from: JSONparserTests.inValidJSONData)
 
             // THEN
-        let expectedResult: Result<MockCodable, ParserError> = .failure(ParserError.badParsing(Optional("dataCorrupted(Swift.DecodingError.Context(codingPath: [], debugDescription: \"The given data was not valid JSON.\", underlyingError: Optional(Error Domain=NSCocoaErrorDomain Code=3840 \"Badly formed object around line 2, column 18.\" UserInfo={NSDebugDescription=Badly formed object around line 2, column 18., NSJSONSerializationErrorIndex=20})))")))
+        let expectedResult: Result<MockCodable, ParserError> = .failure(ParserError.badParsing)
             XCTAssertEqual(result, expectedResult)
         }
 }
